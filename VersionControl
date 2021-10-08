@@ -22,12 +22,16 @@
          【使用Spring】
              【在application.xml中注册组件】
                  <bean>标签、id属性、class属性
-
-
-
-
-
-
+             【方式1---组件id】IOCTest.test2()
+                 spring容器提供了应用上下文applicationContext，通过应用上下文可以获得组件。
+                     需要加载spring配置文件 -> 直接写resources（classpath）下的配置文件名。
+                     new ClassPathXmlApplicationContext("application.xml");
+                 获取实例对象：applicationContext.getBean("userService")  //getBean()中的字符串参数是，要获取的对象所属的组件的id。
+             【方式2---类的类型class】IOCTest.test3()
+                 加载应用上下文同方式1。
+                 获取实例对象：applicationContext.getBean(UserServiceImpl.class); //通过要加载的类的类型来获取实例对象。
+             【方式1和方式2的比较】
+                 同一个类型的组件不唯一（也就是在application.xml中用不同的id注册了两次），则方式1不会报异常，而方式2会报异常。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring02-AOP】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

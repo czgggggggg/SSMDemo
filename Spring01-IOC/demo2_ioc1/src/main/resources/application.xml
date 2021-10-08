@@ -8,5 +8,6 @@
 
     <!-- bean definitions here -->
     <bean id="userService" class="com.bupt.service.UserServiceImpl"/>
+    <!--<bean id="userService2" class="com.bupt.service.UserServiceImpl"/>-->
 
 </beans>
