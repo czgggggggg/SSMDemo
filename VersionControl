@@ -1,5 +1,33 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring01-IOC】
+    【demo1_introduction】
+         【控制就是获得实例的过程】UserService、UserServiceImpl、
+             以前我们通过new来获取一个实例对象，现在可以使用Spring容器来获取实例对象。
+             注意Junit的使用。pom.xml中scope范围对应test。 //@Test注解
+    【demo2_ioc1】
+         【准备】
+             【导包spring-context】
+                 spring-context包括spring-expression、spring-core（包括spring-jcl）、spring-aop、spring-beans
+                 Maven中的小板凳标志可以可视化的看到包之间的依赖关系。
+                 IDEA默认的Maven不是阿里的，外网下载比较慢，可以在setting->Maven中查看更改Maven的路径、版本、配置、仓库。
+             【业务代码】UserService、UserServiceImpl
+             【Spring官网配置文件】
+                 链接地址：https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#xsd-schemas-context
+                 可以复制该内容，并编辑一个文件模板，以备后用。
+             【resource中创建application.xml】
+                 使用刚刚生成的文件模板。
+             【使用反射获取实例对象】IOCTest.test1()
+                 Spring就是基于反射获取类的实例的。
+                 Class.forName()、aClass.newInstance()
+         【使用Spring】
+             【在application.xml中注册组件】
+                 <bean>标签、id属性、class属性
+
+
+
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring02-AOP】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

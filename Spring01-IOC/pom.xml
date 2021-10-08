@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo1_introduction</module>
+        <module>demo2_ioc1</module>
     </modules>
 
 
