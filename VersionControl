@@ -32,6 +32,37 @@
                  获取实例对象：applicationContext.getBean(UserServiceImpl.class); //通过要加载的类的类型来获取实例对象。
              【方式1和方式2的比较】
                  同一个类型的组件不唯一（也就是在application.xml中用不同的id注册了两次），则方式1不会报异常，而方式2会报异常。
+    【demo3_ioc2】
+         【业务代码】User、UserDao、UserDaoImpl、UserService、UserServiceImpl
+              //lombok的使用
+              //application.xml中，bean标签的property子标签的name属性和ref属性。
+                注意，这里name属性的值和bean标签对应的类的set方法的方法名是必须对应的，
+                比如说，UserService中包含成员变量UserDao，
+                      如果UserService中的set方法名是setUserDaoz()，则spring配置文件中UserService对应的bean标签的子标签（对应UserDao）的name值应该是userDaoz。
+                      如果UserService采用了@Data注解（默认为setUserDao()），则name值应该为userDao。
+         【使用se的形式】IOCTest.test1()
+         【使用spring的形式】IOCTest.test2()【这块有点乱】
+         【比较】
+             [1]直接通过spring容器获取UserDao；
+             [2]先通过spring容器获取UserService，在通过UserService的getUserDao()获取UserDao；
+             [3] [1][2]两种方式获取到的UserDao是同一个。
+         【ClassPathXmlApplicationContext和FileSystemXmlApplicationContext】ApplicationContextTest
+             [1]ClassPathXmlApplicationContext
+                   classpath：resources（或java）下的文件名
+                   new ClassPathXmlApplicationContext("application.xml")
+             [2]FileSystemXmlApplicationContext
+                   文件系统：文件的全名
+                   new FileSystemXmlApplicationContext(configPath);//configPath是application.xml的绝对路径。
+             [3]ClassPathXmlApplicationContext和FileSystemXmlApplicationContext的比较
+                   两者获取到的bean不是同一个，因为上下文就不是同一个。
+             //Ctr+H查找键，向上查找、向下查找。
+    【demo4_scope】
+         【bean的作用域】
+             //默认情况下：true          //获得的是同一个bean
+             //scope=singleton  true   //获得的是同一个bean
+             //scope=prototype  false  //获得的不是同一个bean
+         【singleton，但是上下文不同】
+             获取的不是同一个bean，因为spring容器上下文不同。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring02-AOP】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

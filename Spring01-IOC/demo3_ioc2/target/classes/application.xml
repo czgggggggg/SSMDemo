@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean definitions here -->
+    <!--注册dao-->
+    <bean id="userDao" class="com.bupt.dao.UserDaoImpl"/>
+    <!--注册service-->
+    <bean id="userService" class="com.bupt.service.UserServiceImpl">
+        <!--维护service和dao之间的关系-->
+        <!--property标签中的name属性值是和set方法对应的-->
+        <!--当大家看到ref之后，就要从容器中找对应的组件id-->
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <!--<bean id="userService2" class="com.bupt.service.UserServiceImpl">-->
+        <!--&lt;!&ndash;维护service和dao之间的关系&ndash;&gt;-->
+        <!--&lt;!&ndash;property标签中的name属性值是和set方法对应的&ndash;&gt;-->
+        <!--&lt;!&ndash;当大家看到ref之后，就要从容器中找对应的组件id&ndash;&gt;-->
+        <!--<property name="userDao" ref="userDao"/>-->
+    <!--</bean>-->
+
+
+</beans>

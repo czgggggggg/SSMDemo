@@ -2,12 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo1_introduction" />
         <module name="demo2_ioc1" />
+        <module name="demo3_ioc2" />
+        <module name="demo4_scope" />
         <module name="Mybatis01" />
         <module name="Mybatis02" />
         <module name="Mybatis03" />

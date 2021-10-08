@@ -1,4 +1,4 @@
-package com.bupt.service;
+package com.bupt;
 
 /**
  * @Author czgggggggg
@@ -6,5 +6,4 @@ package com.bupt.service;
  * @Description
  */
 public interface UserService {
-    void sayHello(String name);
 }
