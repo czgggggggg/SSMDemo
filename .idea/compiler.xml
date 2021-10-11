@@ -11,6 +11,7 @@
         <module name="demo1_introduction" />
         <module name="demo2-annotation" />
         <module name="demo2_ioc1" />
+        <module name="demo3-dynamic_proxy" />
         <module name="demo3_ioc2" />
         <module name="demo4_scope" />
         <module name="demo5_regist" />

@@ -185,12 +185,57 @@
                       //@PostConstruct、@PreDestroy
                       注释掉<bean>标签的内容，LifeCycleBean的前面加上@Component注解。此时init、destroy方法失效。
                       在自定义的init、destroy方法上分别加上@PostConstruct、@PreDestroy注解，则init、destroy方法再次生效。
-                  【单元测试类】
+                  【单元测试类】【有点迷】
                       pom.xml中加入spring-test包。
                       在测试类中，如果直接注入UserService组件，并调用其sayHi方法，会报空指针异常。
                       要先在测试类上加上@RunWith(SpringJUnit4ClassRunner.class)、@ContextConfiguration("classpath:application.xml")，才能生效。【有点迷】
     【demo3-dynamic_proxy】
-    【demo4-aop】
+         //AOP---手动实现
+         【AOP基础概念】
+             AOP：面向切面编程。 //把需要增强的方法放到一起，做一个统一的调用。
+             target（目标类）-> proxy（代理类）
+             joinpoint（连接点）：过程中的某个点
+             pointcut（切入点）：划分增强范围，指定哪些方法被增强。//谁（哪个方法）
+             advice（通知）：在什么时间，做什么事情。
+             weaver（织入）：动作，由目标类对象生成代理类对象的动作。
+             Aspect（切面）：切面=切入点+通知 //谁，在什么时间，做什么事情
+         【AOP的底层】
+             采用动态代理增强。
+             如果有接口的实现，采用jdk动态代理。
+             如果没有接口的实现，采用cglib动态代理。
+         【AOP实战---手动采用动态代理---jdk动态代理】
+             [1]创建target对象userService
+             [2]创建proxy对象userServiceProxy
+                 Proxy.newInstance()
+                     //包含3个参数：
+                         1.userService.getClass().getClassLoader()
+                         2.userService.getClass().getInterfaces()
+                         3.new InvocationHandler()
+                             //这是创建一个匿名内部类对象
+                             //主要逻辑在于重写匿名内部类InvocationHandler的invoke方法
+                                 //invoke方法的3个参数：Object proxy, Method method, Object[] args
+                                   Object invoke = method.invoke(userService, args);
+                                   在这条赋值语句的前后写增强的语句。
+                                   return invoke
+             [3]proxy对象userServiceProxy调用原来的方法（已经被增强）。
+         【AOP实战---手动采用动态代理---cglib动态代理】
+             【注意】
+                 //使用cglib动态代理需要导spring-context包。
+             [1]创建target对象userService
+             [2]创建proxy对象userServiceProxy
+                 Enhancer.create()
+                     //包含2个参数：
+                         1.UserService.class
+                         2.new InvocationHandler()
+                             //这是创建一个匿名内部类对象  //查看源码可以发现这里的InvocationHandler接口和jdk动态代理里面的不是同一个。
+                             //主要逻辑在于重写匿名内部类InvocationHandler的invoke方法
+                                 //invoke方法的3个参数：Object o, Method method, Object[] objects
+                                 Object invoke = method.invoke(userService, objects);
+                                 在这条赋值语句的前后写增强的语句。
+                                 return invoke
+             [3]proxy对象userServiceProxy调用原来的方法（已经被增强）。
+    【demo4-spring_aop】
+         //AOP---采用spring aop的形式实现
     【demo5-advisor】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
