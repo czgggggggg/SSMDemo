@@ -3,23 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>SSMDemo</artifactId>
+        <artifactId>Spring01-IOC</artifactId>
         <groupId>com.bupt</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Spring01-IOC</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>demo1_introduction</module>
-        <module>demo2_ioc1</module>
-        <module>demo3_ioc2</module>
-        <module>demo4_scope</module>
-        <module>demo5_regist</module>
-        <module>demo6_factory</module>
-        <module>demo7-lifecycle</module>
-    </modules>
+    <artifactId>demo6_factory</artifactId>
 
     <dependencies>
         <dependency>
@@ -33,7 +23,11 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
-
-
 </project>

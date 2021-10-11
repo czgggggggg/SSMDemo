@@ -63,6 +63,33 @@
              //scope=prototype  false  //获得的不是同一个bean
          【singleton，但是上下文不同】
              获取的不是同一个bean，因为spring容器上下文不同。
+    【demo5_regist】NoArgsConstructorBean、AllArgsConstructorBean、application.xml、registTest
+         【组件注册---无参构造】
+             <bean>标签的子标签<property>的name属性（和bean的成员变量一致）、value属性（注意和ref属性的区别）
+         【组件注册---有参构造】
+             <bean>标签的子标签<constructor-arg>的name属性（和有参构造方法的参数一致，而非和成员变量一致）、value属性。
+             重要：name属性的值和有参构造方法的参数一致，而非和成员变量一致。
+                  采用lombok的@AllArgsConstructor注解，则显然和成员变量一致，
+                  否则，一定要注意有参构造函数的形参名！（如示例中的usernameA和passwordA）
+         //lombok的@NoArgsConstructor注解、@AllArgsConstructor注解
+    【demo6_factory】
+          //静态工厂：在静态工厂类的静态方法中return一个新创建的bean对象。
+            实例工厂：在实例工厂类的非静态方法中return一个新创建的bean对象。
+         【se的形式】
+             //静态工厂：不需要实例化静态工厂，就可以创建一个bean对象。
+               实例工厂：需要实例化实例工厂，才可以用实例工厂对象创建一个bean对象。
+         【Spring的形式】
+             //主要关注spring的配置文件application.xml的区别
+             //静态工厂：
+                 [1]直接获取bean对象
+                    bean标签（bean对象）：id、class（指向静态工厂）、factory-method（静态工厂中创建bean对象的静态方法的方法名）
+             //实例工厂：
+                 [1]实例工厂要先实例化
+                    bean标签（实例工厂对象）：id、class（指向实例工厂）
+                 [2]然后在通过实例工厂的实例对象来获取bean对象
+                    bean标签（bean对象）：id、factory-bean（实例工厂对象的id）、factory-method（实例工厂中创建bean对象的非静态方法的方法名）
+    【demo7_lifecycle】
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring02-AOP】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
