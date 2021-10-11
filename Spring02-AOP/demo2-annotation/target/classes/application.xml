@@ -20,4 +20,6 @@
     <!--引入额外的properties配置文件-->
     <context:property-placeholder location="classpath:user.properties"/>
 
+    <!--<bean id="lifeCycleBean" class="com.bupt.bean.LifeCycleBean" init-method="init" destroy-method="destroy"/>-->
+
 </beans>

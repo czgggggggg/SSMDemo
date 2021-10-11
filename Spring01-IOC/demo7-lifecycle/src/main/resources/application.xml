@@ -7,13 +7,13 @@
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- com.bean definitions here -->
-    <com.bean id="lifeCycleBean" class="com.bupt.com.bean.LifeCycleBean" init-method="myinit" destroy-method="mydestory">
+    <bean id="lifeCycleBean" class="com.bupt.bean.LifeCycleBean" init-method="myinit" destroy-method="mydestroy">
         <property name="param" value="lifeCycle"/>
-    </com.bean>
+    </bean>
 
-    <com.bean id="anotherBean" class="com.bupt.com.bean.AnotherBean">
+    <bean id="anotherBean" class="com.bupt.bean.AnotherBean">
         <property name="param" value="another"/>
-    </com.bean>
+    </bean>
 
-    <com.bean id="customBeanPostProcessor" class="com.bupt.CustomBeanPostProcessor"/>
+    <bean id="customBeanPostProcessor" class="com.bupt.CustomBeanPostProcessor"/>
 </beans>

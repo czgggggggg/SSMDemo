@@ -51,7 +51,7 @@ public class LifeCycleBean implements BeanNameAware, BeanFactoryAware, Applicati
         System.out.println("10.DisposableBean");
     }
 
-    public void mydestory(){
+    public void mydestroy(){
         System.out.println("11.custom destory");
     }
 }

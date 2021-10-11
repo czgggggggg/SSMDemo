@@ -121,7 +121,7 @@
                    <map>稍有不同。
                       国产：<entry>标签&key属性 -> <bean>标签&class属性（id属性不需要） -> <property>子标签&name属性&value属性。
                       进口1：<entry>标签&key属性&value-ref属性（指向要引用的已经注册的bean的id）
-                            <entry>标签&key属性 -> <ref>子标签&&bean属性（指向要引用的已经注册的bean的id）。
+                      进口2：<entry>标签&key属性 -> <ref>子标签&&bean属性（指向要引用的已经注册的bean的id）。
     【demo2-annotation】
           //spring配置文件中，<context:component-scan base-package="com.bupt"/>
             <context:component-scan>标签：打开注解扫描开关。
@@ -172,9 +172,30 @@
                         <context:property-placeholder location="classpath:user.properties"/>
                         然后可以直接使用@Value("${user.userInfo}")、@Value("${user.maxSize}")加载key-value。
                       //引进的properties配置文件的值除了在@Value中使用，在spring配置文件中也可以使用。//让bean标签的value值为${}。
-
+              【作用域相关】
+                  【@Scope】
+                       @Scope -> 默认单例
+                       @Scope("singleton") -> 单例
+                       @Scope("prototype") -> 原型
+              【生命周期】
+                  【spring配置文件的形式】
+                      <bean>标签的 id属性 & class属性 & init-method属性 & destroy-method属性。
+                      init-method属性 和 destroy-method属性 的值指定为自定义的init、destroy方法。
+                  【注解的形式】
+                      //@PostConstruct、@PreDestroy
+                      注释掉<bean>标签的内容，LifeCycleBean的前面加上@Component注解。此时init、destroy方法失效。
+                      在自定义的init、destroy方法上分别加上@PostConstruct、@PreDestroy注解，则init、destroy方法再次生效。
+                  【单元测试类】
+                      pom.xml中加入spring-test包。
+                      在测试类中，如果直接注入UserService组件，并调用其sayHi方法，会报空指针异常。
+                      要先在测试类上加上@RunWith(SpringJUnit4ClassRunner.class)、@ContextConfiguration("classpath:application.xml")，才能生效。【有点迷】
+    【demo3-dynamic_proxy】
+    【demo4-aop】
+    【demo5-advisor】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
+    【demo1-aspectj】
+    【demo2-aspect_annotation】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring04-Tx】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
