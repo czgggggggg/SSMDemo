@@ -13,6 +13,7 @@
         <module name="demo4_scope" />
         <module name="demo5_regist" />
         <module name="demo6_factory" />
+        <module name="demo7-lifecycle" />
         <module name="Mybatis01" />
         <module name="Mybatis02" />
         <module name="Mybatis03" />
