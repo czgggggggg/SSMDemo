@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- com.bean definitions here -->
+
+    <bean id="collectionBean" class="com.bupt.bean.CollectionBean">
+        <property name="arrayData">
+            <array>
+                <value>string1</value>
+                <value>string2</value>
+                <value>string3</value>
+            </array>
+        </property>
+        <property name="listData">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="setData">
+            <set>
+                <value>string1</value>
+                <value>string2</value>
+                <value>string3</value>
+            </set>
+        </property>
+        <property name="mapData">
+            <map>
+                <entry key="key1" value="value1"/>
+                <entry key="key2" value="value2"/>
+                <entry key="key3" value="value3"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="key1">value1</prop>
+                <prop key="key2">value2</prop>
+                <prop key="key3">value3</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="user1" class="com.bupt.bean.User">
+        <property name="username" value="czgbyer"/>
+        <property name="password" value="123456"/>
+    </bean>
+    <bean id="user2" class="com.bupt.bean.User">
+        <property name="username" value="czgggggggg"/>
+        <property name="password" value="123456789"/>
+    </bean>
+
+    <!--子标签：bean或ref:可以纯国产的，也可以纯进口，一部分国产一部分进口-->
+    <!--什么情况下id可以不写：没有人引用你，应用上下文获得你的时候按照类型获取-->
+    <bean id="collectionBean2" class="com.bupt.bean.CollectionBean2">
+        <property name="arrayData">
+            <array>
+                <!--一部分国产，一部分进口-->
+                <bean class="com.bupt.bean.User">
+                    <property name="username" value="czgbyer1"/>
+                    <property name="password" value="1234561"/>
+                </bean>
+                <ref bean="user1"/>
+            </array>
+        </property>
+        <property name="setData">
+            <set>
+                <!--纯进口-->
+                <ref bean="user1"/>
+                <ref bean="user2"/>
+            </set>
+        </property>
+        <property name="listData">
+            <list>
+                <!--纯国产-->
+                <bean class="com.bupt.bean.User">
+                    <property name="username" value="czgbyer1"/>
+                    <property name="password" value="1234561"/>
+                </bean>
+                <bean class="com.bupt.bean.User">
+                    <property name="username" value="czgggggggg1"/>
+                    <property name="password" value="1234567891"/>
+                </bean>
+            </list>
+        </property>
+        <property name="mapData">
+            <map>
+                <entry key="key1" value-ref="user1"/>
+                <entry key="key2">
+                    <bean class="com.bupt.bean.User">
+                        <property name="username" value="czgbyer1"/>
+                        <property name="password" value="1234561"/>
+                    </bean>
+                </entry>
+                <entry key="key3">
+                    <ref bean="user2"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>

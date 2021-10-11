@@ -21,7 +21,7 @@
                  Class.forName()、aClass.newInstance()
          【使用Spring】
              【在application.xml中注册组件】
-                 <bean>标签、id属性、class属性
+                 <com.bean>标签、id属性、class属性
              【方式1---组件id】IOCTest.test2()
                  spring容器提供了应用上下文applicationContext，通过应用上下文可以获得组件。
                      需要加载spring配置文件 -> 直接写resources（classpath）下的配置文件名。
@@ -65,9 +65,9 @@
              获取的不是同一个bean，因为spring容器上下文不同。
     【demo5_regist】NoArgsConstructorBean、AllArgsConstructorBean、application.xml、registTest
          【组件注册---无参构造】
-             <bean>标签的子标签<property>的name属性（和bean的成员变量一致）、value属性（注意和ref属性的区别）
+             <com.bean>标签的子标签<property>的name属性（和bean的成员变量一致）、value属性（注意和ref属性的区别）
          【组件注册---有参构造】
-             <bean>标签的子标签<constructor-arg>的name属性（和有参构造方法的参数一致，而非和成员变量一致）、value属性。
+             <com.bean>标签的子标签<constructor-arg>的name属性（和有参构造方法的参数一致，而非和成员变量一致）、value属性。
              重要：name属性的值和有参构造方法的参数一致，而非和成员变量一致。
                   采用lombok的@AllArgsConstructor注解，则显然和成员变量一致，
                   否则，一定要注意有参构造函数的形参名！（如示例中的usernameA和passwordA）
@@ -87,12 +87,41 @@
                  [1]实例工厂要先实例化
                     bean标签（实例工厂对象）：id、class（指向实例工厂）
                  [2]然后在通过实例工厂的实例对象来获取bean对象
-                    bean标签（bean对象）：id、factory-bean（实例工厂对象的id）、factory-method（实例工厂中创建bean对象的非静态方法的方法名）
+                    bean标签（bean对象）：id、factory-com.bean（实例工厂对象的id）、factory-method（实例工厂中创建bean对象的非静态方法的方法名）
     【demo7_lifecycle】
          【疑问】这一块还是比较迷
          //bean标签中的init-method属性、destory-method属性。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring02-AOP】
+    【demo1-collection】
+         //创建一个集合Bean，在类中创建各种集合类型的成员变量。  //CollectionBean
+         //成员变量的类型有array、list、set、map、properties
+         //包含这些类型的成员变量的bean怎么在spring配置文件中进行注册，是这个模块要解决的问题。
+         【起步】
+             首先，bean对象的成员变量在组件注册时，都需要一个<property>子标签。<property>标签的name属性值为成员变量名。
+         【Array】
+             <property> -> <array> -> <value> //<value>标签中写具体的值。
+         【List】
+             <property> -> <list> -> <value> //<value>标签中写具体的值。
+         【Set】
+             <property> -> <set> -> <value> //<value>标签中写具体的值。
+         【Map】
+             <property> -> <map> -> <entry> //<entry>标签的key属性、value属性中写入具体的key、value值。
+         【Properties】
+             <property> -> <props> -> <prop> //<prop>标签的key属性写入具体的key值，<prop>标签中写入具体的value值。
+             //注意区分Map和Properties的value值写入的位置。
+         【bean对象的成员变量是集合类型，并且集合的元素类型不是基本类型的包装类】
+             //这里举一个User类的例子
+             【起步】<property> -> <array>、<list>、<set>、<map>这部分都是一样的。
+                   和之前不同的是值不再是简单的写在<value>标签中，因为现在的值是bean对象，要按照<bean>注册的形式写。
+                   bean对象有国产和进口两种方式。
+                   <array>、<list>、<set>最简单。
+                      国产：<bean>标签&class属性（id属性不需要） -> <property>子标签&name属性&value属性。
+                      进口：<ref>标签&bean属性（指向要引用的已经注册的bean的id）。
+                   <map>稍有不同。
+                      国产：<entry>标签&key属性 -> <bean>标签&class属性（id属性不需要） -> <property>子标签&name属性&value属性。
+                      进口1：<entry>标签&key属性&value-ref属性（指向要引用的已经注册的bean的id）
+                            <entry>标签&key属性 -> <ref>子标签&&bean属性（指向要引用的已经注册的bean的id）。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

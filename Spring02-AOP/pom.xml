@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Spring02-AOP</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>demo1-collection</module>
+    </modules>
 
 
 </project>
