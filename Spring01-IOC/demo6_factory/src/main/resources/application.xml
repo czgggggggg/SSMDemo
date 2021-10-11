@@ -8,11 +8,11 @@
 
     <!-- com.bean definitions here -->
     <!--静态工厂直接获取bean对象-->
-    <com.bean id="animalFromStaticFactory" class="com.bupt.factory.StaticFactory" factory-method="createAnimal"/>
+    <bean id="animalFromStaticFactory" class="com.bupt.factory.StaticFactory" factory-method="createAnimal"/>
 
     <!--实例工厂要先实例化-->
-    <com.bean id="instanceFactory" class="com.bupt.factory.InstanceFactory"/>
+    <bean id="instanceFactory" class="com.bupt.factory.InstanceFactory"/>
     <!--然后在通过实例工厂的实例对象来获取bean对象-->
-    <com.bean id="animalFromInstanceFactory" factory-com.bean="instanceFactory" factory-method="createAnimal"/>
+    <bean id="animalFromInstanceFactory" factory-bean="instanceFactory" factory-method="createAnimal"/>
 
 </beans>

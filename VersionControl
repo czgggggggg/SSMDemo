@@ -87,7 +87,7 @@
                  [1]实例工厂要先实例化
                     bean标签（实例工厂对象）：id、class（指向实例工厂）
                  [2]然后在通过实例工厂的实例对象来获取bean对象
-                    bean标签（bean对象）：id、factory-com.bean（实例工厂对象的id）、factory-method（实例工厂中创建bean对象的非静态方法的方法名）
+                    bean标签（bean对象）：id、factory-bean（实例工厂对象的id）、factory-method（实例工厂中创建bean对象的非静态方法的方法名）
     【demo7_lifecycle】
          【疑问】这一块还是比较迷
          //bean标签中的init-method属性、destory-method属性。
@@ -122,6 +122,57 @@
                       国产：<entry>标签&key属性 -> <bean>标签&class属性（id属性不需要） -> <property>子标签&name属性&value属性。
                       进口1：<entry>标签&key属性&value-ref属性（指向要引用的已经注册的bean的id）
                             <entry>标签&key属性 -> <ref>子标签&&bean属性（指向要引用的已经注册的bean的id）。
+    【demo2-annotation】
+          //spring配置文件中，<context:component-scan base-package="com.bupt"/>
+            <context:component-scan>标签：打开注解扫描开关。
+                base-package属性：扫描base-package属性值对应的包及其全部子包。
+         【之前的方式】
+             组件注册都是在application.xml中注册的。
+             //在application.xml中注册 userService -> UserServiceImpl
+         【注解】
+              【@Component注解】
+                  此时注释掉配置文件中userService的注册。UserServiceImpl类上加上@Component注解。
+                  测试出错：原因UserServiceImpl类加上@Component注解，默认是以userServiceImpl为组件id的。//以类名首字母小写作为组件id。
+                  解决：@Component("userService") //@Component注解带id参数，指定注册的组件的id。
+              【组件注册相关】
+                  //@Repository、@Service、@Controller注解
+                  //特定的类上去使用的组件注册注解。
+                    @Repository -> dao的实现类
+                    @Service -> service的实现类
+                    @Controller -> SpringMVC控制层的类上（后面会使用到）
+                  //不带id参数的@Service注解和不带id参数的@Component注解效果相同。
+                  【疑问】如果UserServiceImpl加上不带id参数的@Service注解，
+                            并以getBean("userService")的形式获取bean，则会报错。//@Service注解需要指定id为userService
+                            而以getBean(UserService.class)的形式获取bean，则运行正常。
+              【组件注入相关】
+                  【@Autowired】
+                      //UserServiceImpl类中添加了UserDao成员变量。
+                        使用XML配置注册userService时，需要一个<property>子标签，id值为userDao，并且需要UserServiceImpl类提供对应的set方法（可以直接用@Data注解）。
+                        此时，我们使用@Service注解，会报空指针异常，因为此时的userDao为null。
+                      //这个时候我们全部采用注解的方式。
+                        UserServiceImpl -> @Service、UserDaoImpl -> @Repository
+                        然后，最关键的，在UserServiceImpl类的成员变量userDao前面加上@Autowired注解，注入容器中已经注册的UserDaoImpl。
+                        也就是说：采用注解注入的方式甚至不需要提供set方法。
+                  【@Qualifier】
+                      //如果容器中这个类型的组件只有一个，则可以直接使用@Autowired
+                        如果容器中这个类型的组件不止一个，则需要加上@Qualifier，并指定组件的id。//@Qualifier必须搭配@Autowired使用。
+                  【@Resource】
+                      //只写@Resource相当于@Autowired，如果这个类型的组件不止一个，则需要使用name属性指定id。
+                  【三者总结】
+                      @Autowired -> 不能指定组件的id，只适用于同类型的组件只有一个的情况。
+                      @Qualifier -> 搭配@Autowired使用，可以指定组件的id，解决了@Autowired不适用于同类型的组件只有一个的情况的问题。
+                      @Resource -> 可以不指定组件的id，也可以指定组件的id。//和@Qualifier不同，它不需要和@Autowired搭配使用。
+                  【@Value】
+                      //给值属性的成员变量注入值。
+                      //比如userDao、userInfo、maxSize都是UserServiceImpl类的成员变量，
+                        userDao需要作为组件注入，而userInfo、maxSize只是普通的变量，而在这些变量前加上@Value注解，可以给这些变量注入值。
+                        例如，@Value("czgbyer666")、@Value("10")
+                      //@Value还可以从properties中取key和value。
+                        首先，需要在application.xml中加载这个properties文件。
+                        <context:property-placeholder location="classpath:user.properties"/>
+                        然后可以直接使用@Value("${user.userInfo}")、@Value("${user.maxSize}")加载key-value。
+                      //引进的properties配置文件的值除了在@Value中使用，在spring配置文件中也可以使用。//让bean标签的value值为${}。
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
