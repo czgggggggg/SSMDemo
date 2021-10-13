@@ -13,6 +13,7 @@
         <module name="demo2_ioc1" />
         <module name="demo3-dynamic_proxy" />
         <module name="demo3_ioc2" />
+        <module name="demo4-spring_aop" />
         <module name="demo4_scope" />
         <module name="demo5_regist" />
         <module name="demo6_factory" />

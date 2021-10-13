@@ -1,3 +1,4 @@
+Processon思维导图链接地址：
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring01-IOC】
     【demo1_introduction】
@@ -90,7 +91,7 @@
                     bean标签（bean对象）：id、factory-bean（实例工厂对象的id）、factory-method（实例工厂中创建bean对象的非静态方法的方法名）
     【demo7_lifecycle】
          【疑问】这一块还是比较迷
-         //bean标签中的init-method属性、destory-method属性。
+         //bean标签中的init-method属性、destroy-method属性。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring02-AOP】
     【demo1-collection】
@@ -236,6 +237,30 @@
              [3]proxy对象userServiceProxy调用原来的方法（已经被增强）。
     【demo4-spring_aop】
          //AOP---采用spring aop的形式实现
+         【业务代码】UserService、UserServiceImpl
+         //首先，打开注解扫描开关，<context:component-scan>标签。
+         【自定义advice通知】CustomAdvice
+             //加上@Component注解
+             实现MethodInterceptor接口。//方法拦截器
+                 重写invoke()方法：
+                     方法参数：MethodInvocation methodInvocation
+                     Object proceed = methodInvocation.proceed();
+                     在这条赋值语句的前后写增强的语句。
+                     return proceed;
+         【生成一个代理对象组件】【有点迷惑】application.xml
+             //id属性值为：userServiceProxy
+             //class属性值为：org.springframework.aop.framework.ProxyFactoryBean
+             //userServiceProxy有两个成员：
+                 [1]target//目标类
+                     ref属性值为：userServiceImpl
+                 [2]interceptorNames//拦截器名字，即，通过哪个advice增强的。
+                     value值为customAdvice  //这个参数是字符串类型，写的是value属性，而非ref属性。
+         【测试】SpringAOPTest
+             //pom.xml中要导入spring-test包。
+               要先在测试类上加上@RunWith(SpringJUnit4ClassRunner.class)、@ContextConfiguration("classpath:application.xml")，才能生效。【疑问】
+             //[1]@Autowired  //直接注入UserService组件，并调用其sayHi方法，会报空指针异常。
+             //[2]@Resource(name = "userServiceImpl")  //AOP未生效
+             //[3]@Resource(name = "userServiceProxy") //AOP生效
     【demo5-advisor】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
@@ -251,8 +276,6 @@
 【SpringMVC03】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-【SpringMVC05】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
