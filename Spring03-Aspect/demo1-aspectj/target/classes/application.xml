@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- bean definitions here -->
+    <context:component-scan base-package="com.bupt"/>
+
+    <aop:config>
+        <aop:pointcut id="mypoint" expression="execution(* com..*(*))"/>
+        <aop:aspect ref="customAspect">
+            <!--<aop:pointcut id="mypoint" expression="execution(public void sayHello1(String))"/>-->
+
+            <aop:before method="mybefore" pointcut-ref="mypoint"/>
+            <aop:after method="myafter" pointcut-ref="mypoint"/>
+            <aop:around method="myaround" pointcut-ref="mypoint"/>
+            <aop:after-returning method="myafterReturning" pointcut-ref="mypoint" returning="object"/>
+            <aop:after-throwing method="myafterThrowing" pointcut-ref="mypoint" throwing="throwable"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

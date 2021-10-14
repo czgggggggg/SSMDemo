@@ -2,20 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="424a57ca-3057-475f-9b31-ba3655c3dd81" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/advice/CustomAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/resources/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/test/java/com/bupt/AdvisorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/aspect/CustomAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/resources/application.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/test/java/com/bupt/AspectjTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring03-Aspect/demo2-aspect_annotation/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring01-IOC/demo2_ioc1/target/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring01-IOC/demo2_ioc1/target/classes/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring01-IOC/demo3_ioc2/target/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring01-IOC/demo3_ioc2/target/classes/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring01-IOC/demo4_scope/target/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring01-IOC/demo4_scope/target/classes/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring01-IOC/demo5_regist/target/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring01-IOC/demo5_regist/target/classes/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring02-AOP/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring02-AOP/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring03-Aspect/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring03-Aspect/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VersionControl" beforeDir="false" afterPath="$PROJECT_DIR$/VersionControl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,6 +42,8 @@
     <ignored path="$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/target/" />
     <ignored path="$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/target/" />
     <ignored path="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/target/" />
+    <ignored path="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/target/" />
+    <ignored path="$PROJECT_DIR$/Spring03-Aspect/demo2-aspect_annotation/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,148 +86,166 @@
           <entry key="0-SNAPSHOT" value="3" />
           <entry key="VersionControl" value="6" />
           <entry key="class" value="5" />
-          <entry key="java" value="181" />
+          <entry key="java" value="199" />
           <entry key="properties" value="3" />
           <entry key="ps1" value="1" />
-          <entry key="xml" value="98" />
+          <entry key="xml" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
-          <entry key="JAVA" value="181" />
+          <entry key="JAVA" value="199" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Properties" value="3" />
           <entry key="UML" value="3" />
-          <entry key="XML" value="98" />
+          <entry key="XML" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="VersionControl" value="10729" />
+          <entry key="VersionControl" value="12612" />
           <entry key="dummy" value="3" />
-          <entry key="ft" value="2" />
-          <entry key="java" value="7058" />
+          <entry key="ft" value="3" />
+          <entry key="java" value="8135" />
           <entry key="properties" value="45" />
-          <entry key="xml" value="2360" />
+          <entry key="xml" value="2534" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7058" />
-          <entry key="PLAIN_TEXT" value="10732" />
+          <entry key="JAVA" value="8135" />
+          <entry key="PLAIN_TEXT" value="12615" />
           <entry key="Properties" value="45" />
-          <entry key="VTL" value="2" />
-          <entry key="XML" value="2360" />
+          <entry key="VTL" value="3" />
+          <entry key="XML" value="2534" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VersionControl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="299" selection-start-line="299" selection-end-line="299" />
+            <state relative-caret-position="119">
+              <caret line="348" column="12" selection-start-line="348" selection-start-column="12" selection-end-line="348" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/bean/User.java">
+        <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/aspect/CustomAspect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="14">
+              <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
+                <element signature="e#399#400#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#1446#1447#0" expanded="true" />
+                <element signature="e#1518#1519#0" expanded="true" />
+                <element signature="e#1566#1567#0" expanded="true" />
+                <element signature="e#1602#1603#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/test/java/com/cskaoyan/AdvisorTest.java">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Throwable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/main/java/com/cskaoyan/aspect/CustomAspect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+              <folding>
+                <element signature="e#185#186#0" expanded="true" />
+                <element signature="e#243#244#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/test/java/com/bupt/AspectjTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#320#321#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#664#665#0" expanded="true" />
+                <element signature="e#690#691#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/resources/application.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/test/java/com/cskaoyan/MyTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+              <folding>
+                <element signature="e#510#511#0" expanded="true" />
+                <element signature="e#556#557#0" expanded="true" />
+                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/main/java/com/cskaoyan/service/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/test/java/com/cskaoyan/MyTest2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
-              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-              <folding>
-                <element signature="e#547#548#0" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/advice/CustomAdvice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/resources/application.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/test/java/com/bupt/AdvisorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#344#345#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/main/resources/application.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -241,6 +258,7 @@
         <option value="20spring" />
         <option value="Spring官网配置文件01" />
         <option value="Interface" />
+        <option value="Spring官网配置文件02（加上aop）" />
         <option value="Class" />
       </list>
     </option>
@@ -300,13 +318,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Spring01-IOC/demo7-lifecycle/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring01-IOC/demo7-lifecycle/src/main/java/com/bupt/bean/AnotherBean.java" />
-        <option value="$PROJECT_DIR$/Spring01-IOC/demo7-lifecycle/src/test/java/com/bupt/LifeCycleTest.java" />
-        <option value="$PROJECT_DIR$/Spring01-IOC/demo7-lifecycle/src/main/java/com/bupt/CustomBeanPostProcessor.java" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo1-collection/pom.xml" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo1-collection/src/main/java/bean/CollectionBean.java" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo1-collection/src/main/java/com/bupt/bean/User.java" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo1-collection/src/main/java/com/bupt/bean/CollectionBean2.java" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo1-collection/src/main/resources/application.xml" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo1-collection/src/test/java/com/bupt/CollectionTest.java" />
@@ -343,13 +354,20 @@
         <option value="$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/java/com/bupt/advice/CustomAdvice.java" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/resources/application.xml" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/test/java/com/bupt/SprinAOPTest.java" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/bean/User.java" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserService.java" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/advice/CustomAdvice.java" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/test/java/com/bupt/AdvisorTest.java" />
         <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/resources/application.xml" />
+        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring03-Aspect/demo2-aspect_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserService.java" />
+        <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/test/java/com/bupt/AspectjTest.java" />
+        <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/resources/application.xml" />
+        <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/aspect/CustomAspect.java" />
         <option value="$PROJECT_DIR$/VersionControl" />
       </list>
     </option>
@@ -390,6 +408,9 @@
             <id>Android</id>
           </State>
           <State>
+            <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
             <id>CorrectnessLintAndroid</id>
           </State>
           <State>
@@ -408,9 +429,20 @@
             <id>OSGi</id>
           </State>
           <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+          <State>
             <id>可能的错误Gradle</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringJavaInjectionPointsAutowiringInspection</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -442,151 +474,34 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="advice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-spring_aop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -594,8 +509,8 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -604,8 +519,8 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -615,32 +530,20 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="advice" type="462c0819:PsiDirectoryNode" />
+              <item name="aspect" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -651,8 +554,8 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -660,16 +563,16 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -677,8 +580,8 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -687,13 +590,19 @@
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring02-AOP" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5-advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-aspectj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="bupt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring03-Aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="demo2-aspect_annotation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -706,7 +615,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/IDEAProjects/SSMDemo/Spring01-IOC/demo1_introduction/src/test/java/com/bupt/IntroductionTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1634201636775" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1634219283045" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/test/java/com/bupt" />
     <property name="last_opened_file_path" value="D:/softwareforcode/Soot/ProjectForSoot/SootDemo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -714,7 +623,7 @@
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -733,7 +642,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AdvisorTest.test1">
+  <component name="RunManager" selected="JUnit.AspectjTest.mytest1">
     <configuration name="AdvisorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo5-advisor" />
       <extension name="coverage">
@@ -780,8 +689,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CglibTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo3-dynamic_proxy" />
+    <configuration name="AspectjTest.mytest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo1-aspectj" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.bupt.*" />
@@ -789,15 +698,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.bupt" />
-      <option name="MAIN_CLASS_NAME" value="com.bupt.CglibTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="MAIN_CLASS_NAME" value="com.bupt.AspectjTest" />
+      <option name="METHOD_NAME" value="mytest1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SprinAOPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo4-spring_aop" />
+    <configuration name="AspectjTest.mytest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo1-aspectj" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.bupt.*" />
@@ -805,25 +714,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.bupt" />
-      <option name="MAIN_CLASS_NAME" value="com.bupt.SprinAOPTest" />
+      <option name="MAIN_CLASS_NAME" value="com.bupt.AspectjTest" />
+      <option name="METHOD_NAME" value="mytest2" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CglibTest.test1" />
-      <item itemvalue="JUnit.SprinAOPTest" />
       <item itemvalue="JUnit.AdvisorTest" />
       <item itemvalue="JUnit.AdvisorTest.test2" />
       <item itemvalue="JUnit.AdvisorTest.test1" />
+      <item itemvalue="JUnit.AspectjTest.mytest1" />
+      <item itemvalue="JUnit.AspectjTest.mytest2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AspectjTest.mytest1" />
+        <item itemvalue="JUnit.AspectjTest.mytest2" />
         <item itemvalue="JUnit.AdvisorTest.test1" />
         <item itemvalue="JUnit.AdvisorTest.test2" />
         <item itemvalue="JUnit.AdvisorTest" />
-        <item itemvalue="JUnit.SprinAOPTest" />
-        <item itemvalue="JUnit.CglibTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -838,44 +749,44 @@
       <option name="presentableId" value="Default" />
       <updated>1633664184550</updated>
       <workItem from="1633664187650" duration="29589000" />
-      <workItem from="1633921118518" duration="35494000" />
+      <workItem from="1633921118518" duration="47414000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AdvisorTest_test2 - 2021.10.14 at 10h 13m 09s.xml">
-      <configuration name="AdvisorTest.test2" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest2 - 2021.10.14 at 17h 57m 04s.xml">
+      <configuration name="AspectjTest.mytest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test2 - 2021.10.14 at 10h 14m 02s.xml">
-      <configuration name="AdvisorTest.test2" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest1 - 2021.10.14 at 21h 06m 00s.xml">
+      <configuration name="AspectjTest.mytest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 14m 12s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest1 - 2021.10.14 at 21h 09m 32s.xml">
+      <configuration name="AspectjTest.mytest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 15m 01s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest1 - 2021.10.14 at 21h 20m 32s.xml">
+      <configuration name="AspectjTest.mytest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 16m 05s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest1 - 2021.10.14 at 21h 28m 08s.xml">
+      <configuration name="AspectjTest.mytest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 19m 38s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest2 - 2021.10.14 at 21h 29m 17s.xml">
+      <configuration name="AspectjTest.mytest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 20m 31s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest2 - 2021.10.14 at 21h 29m 45s.xml">
+      <configuration name="AspectjTest.mytest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 20m 48s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest1 - 2021.10.14 at 21h 32m 43s.xml">
+      <configuration name="AspectjTest.mytest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 21m 05s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest1 - 2021.10.14 at 21h 38m 16s.xml">
+      <configuration name="AspectjTest.mytest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AdvisorTest_test1 - 2021.10.14 at 10h 21m 44s.xml">
-      <configuration name="AdvisorTest.test1" configurationId="JUnit" />
+    <history-entry file="AspectjTest_mytest2 - 2021.10.14 at 21h 38m 22s.xml">
+      <configuration name="AspectjTest.mytest2" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65083000" />
+    <option name="totallyTimeSpent" value="77003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -886,20 +797,20 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="设计器" order="3" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.21179625" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21179625" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="缩略图" weight="0.32452276" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.32892805" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.21145375" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49932975" weight="0.14684288" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50067025" side_tool="true" weight="0.14977974" />
       <window_info anchor="bottom" id="Statistic" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="调试" order="6" />
+      <window_info anchor="bottom" id="调试" order="6" weight="0.32892805" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32892805" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32892805" />
-      <window_info anchor="bottom" id="Run" order="10" visible="true" weight="0.33480176" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.4493392" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -927,109 +838,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo2-annotation/src/main/resources/user.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo2-annotation/src/test/java/com/bupt/AnnotationFinalTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo2-annotation/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo2-annotation/src/test/java/com/bupt/AnnotationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <caret line="17" selection-start-line="17" selection-start-column="2" selection-end-line="18" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo2-annotation/src/test/java/com/bupt/AnotherTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo2-annotation/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="13" selection-start-line="13" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/main/java/com/bupt/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/main/java/com/bupt/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="e#173#174#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/main/java/com/bupt/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Java资料/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo3_dynamic_proxy/src/test/java/com/cskaoyan/JdkTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="14" selection-start-line="14" selection-end-line="27" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Java资料/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo3_dynamic_proxy/src/test/java/com/cskaoyan/CglibTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/main/java/com/bupt/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1115,17 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/java/com/bupt/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-          <folding>
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo4_spring_aop/src/main/java/com/cskaoyan/advice/CustomAdvice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1154,23 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-528">
           <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/java/com/bupt/advice/CustomAdvice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1215,13 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/main/java/com/cskaoyan/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1231,13 +1004,6 @@
     </entry>
     <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/main/java/com/cskaoyan/bean/User.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/main/java/com/cskaoyan/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1260,15 +1026,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/bean/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="198">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1279,20 +1040,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/test/java/com/cskaoyan/AdvisorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/test/java/com/bupt/AdvisorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="271">
           <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1302,9 +1052,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/test/java/com/cskaoyan/AdvisorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day02-springAop-课堂/day02-spring-ioc-aop/demo5_advisor/src/main/java/com/cskaoyan/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/java/com/bupt/advice/CustomAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/java/com/bupt/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="12" selection-start-line="12" selection-end-line="41" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo2-aspect_annotation/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo4-spring_aop/src/main/resources/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="58" lean-forward="true" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/resources/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret selection-end-line="8" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/advice/CustomAdvice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
+        <state relative-caret-position="223">
           <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1312,24 +1152,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/bean/User.java">
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/test/java/com/cskaoyan/MyTest2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="66">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/main/java/com/cskaoyan/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/test/java/com/cskaoyan/MyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="e#510#511#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day03-Spring-aspect-课堂/day03-aspect/demo1_aspectj/src/main/java/com/cskaoyan/aspect/CustomAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/test/java/com/bupt/AspectjTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#664#665#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/resources/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/aspect/CustomAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1566#1567#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VersionControl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="299" selection-start-line="299" selection-end-line="299" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="119">
+          <caret line="348" column="12" selection-start-line="348" selection-start-column="12" selection-end-line="348" selection-end-column="12" />
         </state>
       </provider>
     </entry>

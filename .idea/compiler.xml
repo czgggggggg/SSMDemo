@@ -7,9 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo1-aspectj" />
         <module name="demo1-collection" />
         <module name="demo1_introduction" />
         <module name="demo2-annotation" />
+        <module name="demo2-aspect_annotation" />
         <module name="demo2_ioc1" />
         <module name="demo3-dynamic_proxy" />
         <module name="demo3_ioc2" />
@@ -24,7 +26,6 @@
         <module name="Mybatis03" />
         <module name="Mybatis04" />
         <module name="Mybatis05" />
-        <module name="Spring03-Aspect" />
         <module name="Spring04-Tx" />
         <module name="SpringMVC01" />
         <module name="SpringMVC02" />

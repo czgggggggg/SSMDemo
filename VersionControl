@@ -1,4 +1,4 @@
-Processon思维导图链接地址：
+Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e401fd3c24907e83
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring01-IOC】
     【demo1_introduction】
@@ -247,7 +247,7 @@ Processon思维导图链接地址：
                      Object proceed = methodInvocation.proceed();
                      在这条赋值语句的前后写增强的语句。
                      return proceed;
-         【生成一个代理对象组件】【有点迷惑】application.xml
+         【注册一个代理对象组件】【有点迷惑】application.xml
              //id属性值为：userServiceProxy
              //class属性值为：org.springframework.aop.framework.ProxyFactoryBean
              //userServiceProxy有两个成员：
@@ -283,7 +283,7 @@ Processon思维导图链接地址：
                       和返回值相同，如果是基本类型或者是java.lang包目录下的，可以直接写。
                                   如果不在这个范围，需要写全类名。
         【业务代码】User、UserService、UserServiceImpl
-                  CustomAdvice //实现MethodInterceptor接口
+                  CustomAdvice //实现MethodInterceptor接口 //@Component
                   AdvisorTest
              //此处AdvisorTest使用@Autowired注解注入UserService对象不会报空指针异常【有点迷惑，同上】
         【application.xml的配置】
@@ -297,7 +297,57 @@ Processon思维导图链接地址：
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
     【demo1-aspectj】
-
+        【导包】spring-context、spring-test、junit、lombok、aspectjweaver
+        【业务代码】UserService、UserServiceImpl
+        【定义切面类】CustomAspect
+            //@Component
+            //切面类中的方法（通知方法）：就是做什么事情。//mybefore()、myafter()
+              时间：由我们来决定。 //在application.xml中将切面类的方法和aop的before、after等关联起来。
+        【application.xml中进一步配置】
+            <aop:config>标签
+                -> <aop:aspect>标签
+                        //ref属性（指向自定义的切面类的id）
+                    -> <aop:pointcut>标签
+                        //id属性 & expression属性
+                    -> <aop:before>标签
+                        //method属性（自定义切面类中对应的方法名）
+                        //pointcut-ref属性（指向pointcut的id）
+                    -> <aop:after>标签
+                    -> <aop:after-throwing>标签
+                    -> <aop:after-returning>标签
+                    -> <aop:around>标签
+        【测试】AspectjTest
+            此时测试类中的UserService对象已经是一个代理对象了。
+        【在通知方法中可以增加JoinPoint类的形参】
+            Signature getSignature();  //获取封装了方法签名的对象，通过Signature可以进一步获取方法名等信息。
+            Object[] args;  //获取传入目标方法的参数对象
+            Object getTarget();  //获取被代理对象
+            Object getThis();  //获取代理对象
+        【doAround】
+            <aop:around>标签
+            CustomAdvice中的myaround()方法。
+                增加一个ProceedingJoinPoint类的形参。还包括一个Object类型的返回值。
+                之后的操作类似手动代理中的方法增强：
+                    Object proceed = proceedingJoinPoint.proceed();
+                    在这条赋值语句的前后写增强的语句。
+                    return proceed;
+        【after-returning】
+            <aop:after-returning>标签  //注意多了一个returning属性，属性值为”object”。
+            CustomAdvice中的myafterReturning()方法。
+                增加一个Object类型的形参。
+                可以在方法中输出object。//如果切入点方法没有返回值，则object的值为null；
+                                       如果切入点方法有返回值，则object的值为这个返回值的值。
+        【after-throwing】
+            <aop:after-throwing>标签  //注意多了一个throwing属性，属性值为”throwable”。
+            CustomAdvice中的myafterThrowing()方法。
+                增加了一个Throwable类型的形参。
+                可以在方法中输出throwable。//如果切入点方法没有抛出异常，则throwable的值为null；
+                                          如果切入点方法有抛出异常，则throwable的值为这个异常的异常信息。//例如，除零异常：java.lang.ArithmeticException: / by zero
+        【补充&总结】
+            通知方法均可以增加JoinPoint形参。
+            around的返回值是Object，形参是ProceedingJoinPoint。
+            after-returning、after-throwing都有特殊类型的形参。
+            <aop:pointcut>标签可以写在<aop:aspect>标签里面，也可以写在外面。
     【demo2-aspect_annotation】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring04-Tx】
