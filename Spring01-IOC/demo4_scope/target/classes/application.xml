@@ -6,8 +6,8 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- bean definitions here -->
-    <!--<bean id="userService" class="com.bupt.UserServiceImpl"/>-->
-    <bean id="userService" class="com.bupt.UserServiceImpl" scope="singleton"/>
-    <!--<bean id="userService" class="com.bupt.UserServiceImpl" scope="prototype"/>-->
+    <!-- com.bean definitions here -->
+    <!--<com.bean id="userService" class="com.bupt.UserServiceImpl"/>-->
+    <com.bean id="userService" class="com.bupt.UserServiceImpl" scope="singleton"/>
+    <!--<com.bean id="userService" class="com.bupt.UserServiceImpl" scope="prototype"/>-->
 </beans>

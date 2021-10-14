@@ -16,6 +16,7 @@
         <module>demo2-annotation</module>
         <module>demo3-dynamic_proxy</module>
         <module>demo4-spring_aop</module>
+        <module>demo5-advisor</module>
     </modules>
 
 

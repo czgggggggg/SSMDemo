@@ -262,9 +262,42 @@ Processon思维导图链接地址：
              //[2]@Resource(name = "userServiceImpl")  //AOP未生效
              //[3]@Resource(name = "userServiceProxy") //AOP生效
     【demo5-advisor】
+        //demo4-spring_aop中的代理对象是在application.xml中手动注册生成的，目前只有一个代理对象。
+          如果需要100个代理对象呢？手动生成会非常麻烦。
+        【准备工作】
+             [1]pom.xml中导入aspectjweaver这个包
+             [2]application.xml中在Spring官网配置文件01的基础上，引入aop的schema。
+                  <beans>标签中增加xmlns:aop属性，其属性值为http://www.springframework.org/schema/aop
+                  <beans>标签的xsi:schemaLocation属性值中，加入http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd
+        【Pointcut切入点表达式】
+             作用：划分方法（直接指定某一些方法）
+             表达式：execution(修饰符，返回值，包名.类名.方法名(参数))
+                 修饰符：可以省略，省略代表任意的修饰符。
+                 返回值：不可以省略，可以使用*来进行通配。
+                     //返回值的写法：如果是基本类型或者是java.lang包目录下的，可以直接写。
+                                   如果不在这个范围，需要写全类名。
+                 包名.类名.方法名：首尾不能省略，中间部分可以省略，使用..进行省略。
+                                 可以使用*通配，*可以代表一个单词或者一个单词的一部分。
+                 参数：可以省略不写，省略不写代表的是无参函数。
+                      *通配一个参数，..代表任意参数（任意数量任意类型的参数）。
+                      和返回值相同，如果是基本类型或者是java.lang包目录下的，可以直接写。
+                                  如果不在这个范围，需要写全类名。
+        【业务代码】User、UserService、UserServiceImpl
+                  CustomAdvice //实现MethodInterceptor接口
+                  AdvisorTest
+             //此处AdvisorTest使用@Autowired注解注入UserService对象不会报空指针异常【有点迷惑，同上】
+        【application.xml的配置】
+             <aop:config>标签 -> <aop:advisor>子标签 -> advice-ref属性 & pointcut属性
+             advice-ref属性的值是advice组件的id。
+             pointcut属性值为切入点表达式。
+                 demo5的例子：
+                     完整的切入点表达式：execution(public void com.bupt.service.UserServiceImpl.sayHello(String))
+                     修饰符省略，返回值通配，包名.类名.方法名部分省略首尾通配，参数不省略：execution(* *.bu*..*(String))
+                         //注意：这里参数不要省略，省略就代表无参了，aop会不生效
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
     【demo1-aspectj】
+
     【demo2-aspect_annotation】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring04-Tx】

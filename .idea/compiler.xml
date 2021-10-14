@@ -15,6 +15,7 @@
         <module name="demo3_ioc2" />
         <module name="demo4-spring_aop" />
         <module name="demo4_scope" />
+        <module name="demo5-advisor" />
         <module name="demo5_regist" />
         <module name="demo6_factory" />
         <module name="demo7-lifecycle" />
