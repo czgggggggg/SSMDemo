@@ -349,6 +349,26 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
             after-returning、after-throwing都有特殊类型的形参。
             <aop:pointcut>标签可以写在<aop:aspect>标签里面，也可以写在外面。
     【demo2-aspect_annotation】
+        //通过注解来使用aspectj，不再使用<aop:config>标签。
+        【准备】复制deno1种的业务代码、切面类、测试类、pom.xml
+        【注解方式】
+            [1]application.xml中增加<aop:aspectj-autoproxy>标签，打开注解开关。
+            [2]切面类上增加@Aspect注解，标记为切面类。 //这样就不需要在配置文件中使用<aop:aspect>来注册切面类了。
+            [3]在通知方法上增加对应的注解。  //这样就不需要在配置文件中使用对应的通知方法、pointcut的标签。
+               //第一种方式（在通知方法注解中，直接写入切入点表达式）：
+                     @Before("execution(...)")
+                     @After("execution(...)")
+                     @Around("execution(...)")
+                     @AfterReturning(value="execution(...)",returning="object")
+                     @AfterThrowing(value="execution(...)",throwing="throwable")
+               //第二种方式（先注册切入点表达式组件，再在通知方法中引用切入点表达式）
+                     @Pointcut("execution(...)")
+                     public void mypointcut(){}
+                     @Before("mypointcut()")
+                     @After("mypointcut()")
+                     @Around("mypointcut()")
+                     @AfterReturning(value="mypointcut()",returning="object")
+                     @AfterThrowing(value="mypointcut()",throwing="throwable")
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring04-Tx】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
