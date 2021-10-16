@@ -13,6 +13,7 @@
         <module name="demo2-annotation" />
         <module name="demo2-aspect_annotation" />
         <module name="demo2_ioc1" />
+        <module name="demo3-aspectj_annotation" />
         <module name="demo3-dynamic_proxy" />
         <module name="demo3_ioc2" />
         <module name="demo4-spring_aop" />

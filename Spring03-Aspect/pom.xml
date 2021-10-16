@@ -14,6 +14,7 @@
     <modules>
         <module>demo1-aspectj</module>
         <module>demo2-aspect_annotation</module>
+        <module>demo3-aspectj_annotation</module>
     </modules>
 
 

@@ -353,7 +353,9 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
         【准备】复制deno1种的业务代码、切面类、测试类、pom.xml
         【注解方式】
             [1]application.xml中增加<aop:aspectj-autoproxy>标签，打开注解开关。
-            [2]切面类上增加@Aspect注解，标记为切面类。 //这样就不需要在配置文件中使用<aop:aspect>来注册切面类了。
+            [2]切面类上增加@Aspect注解，标记为切面类。
+               //这样就不需要在配置文件中使用<aop:aspect>来注册切面类了。
+               //注意：@Component和@Aspect注解缺一不可。
             [3]在通知方法上增加对应的注解。  //这样就不需要在配置文件中使用对应的通知方法、pointcut的标签。
                //第一种方式（在通知方法注解中，直接写入切入点表达式）：
                      @Before("execution(...)")
@@ -369,6 +371,30 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                      @Around("mypointcut()")
                      @AfterReturning(value="mypointcut()",returning="object")
                      @AfterThrowing(value="mypointcut()",throwing="throwable")
+    【demo3-aspectj_annotation】
+         //使用自定义注解来使用pointcut
+        【导包】spring-context、spring-test、junit、lombok、aspectjweaver
+        【application.xml】
+            打开注解开关：<context:component-scan base-package="com.bupt"/>
+                        <aop:aspectj-autoproxy/>
+        【业务代码】UserService、UserServiceImpl
+            //sayHello()方法中增加一条语句：Thread.sleep(5000)
+        【自定义注解CountTime】
+            //@interface
+            //@Retention(RetentionPolicy.RUNTIME)  //这个自定义注解在程序运行时生效
+              @Target(ElementType.METHOD)          //这个自定义注解加在方法上
+        【编写切面类CustomAspect】
+            //@Component、@Aspect
+            //@Pointcut注解中不再写切入点表达式，而是自定义注解。//注解出现在哪里，哪里就被增强。
+                  @Pointcut("annotation(com.bupt.anno.CountTime)")
+                  public void mypointcut()
+            //Aspect的通知方法这里也使用注解的方式，同demo2。
+                  业务逻辑：使用around方法计算切入点方法的执行时间。
+        【将自定义注解加在需要增强的方法上】
+            //此处将@CountTime注解加在UserServiceImpl类的sayHello()方法上，sayHi()方法不加（作为对比）。
+        【测试类】AspectjAnnotationTest
+            @RunWith(SpringJUnit4ClassRunner.class)
+            @ContextConfiguration("classpath:application.xml")
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring04-Tx】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
