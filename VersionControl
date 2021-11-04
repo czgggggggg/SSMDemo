@@ -411,6 +411,12 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
             [2]在spring配置文件中注册datasource、jdbcTemplate组件。
                    //new -> <bean>标签、set方法 -> <property>标签
             [3]IocTest类中注入JdbcTemplate对象，之后的测试同se形式。
+        【增加dao层】
+            [1]把jdbcTemplate的导入和使用交给AccountDao，接口只提供外部一个方法selectNameById()。
+            [2]IocTest类只需要导入AccountDao并调用selectNameById()方法就可以对数据库进行查询操作。
+        【jdbcDaoSupport这块没懂，跳过】
+    【demo2_propagation_introduction】
+
 
 
 
