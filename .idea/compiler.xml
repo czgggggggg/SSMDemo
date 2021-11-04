@@ -7,8 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo04-jdbc_template" />
         <module name="demo1-aspectj" />
         <module name="demo1-collection" />
+        <module name="demo1-jdbc_template" />
         <module name="demo1_introduction" />
         <module name="demo2-annotation" />
         <module name="demo2-aspect_annotation" />
@@ -27,12 +29,17 @@
         <module name="Mybatis03" />
         <module name="Mybatis04" />
         <module name="Mybatis05" />
-        <module name="Spring04-Tx" />
         <module name="SpringMVC01" />
         <module name="SpringMVC02" />
         <module name="SpringMVC03" />
         <module name="SpringMVC04" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo1-jdbc_template" target="1.5" />
+      <module name="demo4-test" target="1.5" />
+      <module name="Spring04-test" target="1.5" />
+      <module name="Spring04-Tx" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

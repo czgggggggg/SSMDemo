@@ -397,6 +397,23 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
             @ContextConfiguration("classpath:application.xml")
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring04-Tx】
+    【demo1-jdbc_template】
+        【导包】spring-jdbc、mysql-connect-java、druid、junit //先不导入spring-context、spring-test
+               注意mysql驱动mysql-connect-java的版本要和电脑上安装的mysql的版本一致。比如mysql版本8.0.26，驱动的版本是8.0.11
+        【se的形式】SeTest
+            [1]提供一个数据源new DruidDataSource()
+            [2]数据源的4个配置：driverClassName、url、username、password
+            [3]提供一个JdbcTemplate实例，并且配置上datasource。
+            [4]声明sql字符串
+            [5]通过jdbcTemplate.queryForObject(sql,String.class,args)来查询数据库，并返回结果。
+        【Spring的形式】IocTest、application.xml
+            [1]此时再导入spring-context、spring-test，创建spring环境。
+            [2]在spring配置文件中注册datasource、jdbcTemplate组件。
+                   //new -> <bean>标签、set方法 -> <property>标签
+            [3]IocTest类中注入JdbcTemplate对象，之后的测试同se形式。
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
