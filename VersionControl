@@ -461,11 +461,26 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
         【没有增加事务出现问题】
                 此时，在两条updateMoneyById()语句直接制造一个除零异常，运行代码发现数据库中，转账者转了钱，但是收账者并没有收到钱。
         【采用手动管理事务的方式】
+                [1]配置文件中注册事transactionManager
+                    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+                        <property name="dataSource" value="datasource"/>
+                    </bean>
+                [2]继续注册transactionTemplate
+                    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+                        <property name="transactionManager" value="transactionManager"/>
+                    </bean>
+                [3]修改AccountServiceImpl
+                    将涉及到更改数据库的代码作为一个事务处理，要么全部都执行，要么全部都不执行。
+                    [1]注入transactionTemplate
+                    [2]
+                        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+                            @Override
+                            protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
+                                //当作一个事务处理的代码。
+                            }
+                        });
 
-
-
-
-
+                [4]测试：此时报除零异常，且不会出现数据库更改不一致的问题。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
