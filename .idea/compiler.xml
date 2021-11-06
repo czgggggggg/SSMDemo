@@ -7,16 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo04-jdbc_template" />
         <module name="demo1-aspectj" />
         <module name="demo1-collection" />
         <module name="demo1-jdbc_template" />
         <module name="demo1_introduction" />
         <module name="demo2-annotation" />
         <module name="demo2-aspect_annotation" />
+        <module name="demo2-propagation_introduction" />
         <module name="demo2_ioc1" />
         <module name="demo3-aspectj_annotation" />
         <module name="demo3-dynamic_proxy" />
+        <module name="demo3-tx_template" />
         <module name="demo3_ioc2" />
         <module name="demo4-spring_aop" />
         <module name="demo4_scope" />
@@ -36,6 +37,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo01-jdbc_template" target="1.5" />
       <module name="demo1-jdbc_template" target="1.5" />
       <module name="demo4-test" target="1.5" />
       <module name="Spring04-test" target="1.5" />

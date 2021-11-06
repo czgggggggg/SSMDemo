@@ -403,6 +403,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
         【se的形式】SeTest
             [1]提供一个数据源new DruidDataSource()
             [2]数据源的4个配置：driverClassName、url、username、password
+                //url -> jdbc:mysql://localhost:3306/20_db?characterEncoding=utf-8&amp;&amp;serverTimezone=GMT
             [3]提供一个JdbcTemplate实例，并且配置上datasource。
             [4]声明sql字符串
             [5]通过jdbcTemplate.queryForObject(sql,String.class,args)来查询数据库，并返回结果。
@@ -410,12 +411,57 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
             [1]此时再导入spring-context、spring-test，创建spring环境。
             [2]在spring配置文件中注册datasource、jdbcTemplate组件。
                    //new -> <bean>标签、set方法 -> <property>标签
+                   //& -> &amp;
             [3]IocTest类中注入JdbcTemplate对象，之后的测试同se形式。
         【增加dao层】
             [1]把jdbcTemplate的导入和使用交给AccountDao，接口只提供外部一个方法selectNameById()。
             [2]IocTest类只需要导入AccountDao并调用selectNameById()方法就可以对数据库进行查询操作。
         【jdbcDaoSupport这块没懂，跳过】
-    【demo2_propagation_introduction】
+    【demo2-propagation_introduction】
+        【知识点】
+            事务的4个特性： A-原子性、C-一致性、I-隔离性、D-持久性
+            并发引起的问题：脏读、不可重复读、幻读（虚读）
+                脏读：线程A读取了被线程B修改后但未提交的数据。
+                不可重复读：线程A读取了被线程B修改后且已提交的数据。//修改
+                幻读：线程A读取了被线程B进行增删操作后且已提交的数据。//增删
+            数据库隔离级别：
+                [        脏读 不可重复读 幻读]
+                [读未提交  ×      ×      × ]
+                [读已提交  √      ×      × ]  Oracle的默认隔离级别
+                [可重复读  √      √      × ]  Mysql的默认隔离级别
+                [序列化    √      √      √ ]
+            Spring事务的核心API：
+                PlatFormTransactionManager
+                TransactionStatus //事务状态
+                    isNewTransaction() //是否是新的事务
+                    hasSavepoint()     //是否有保存点
+                    setRollbackOnly()  //设置回滚
+                    isRollbackOnly()   //是否回滚
+                    flush              //刷新
+                    isComplete()       //是否完成
+                TransactionDefinition //定义事务的名称、隔离级别、传播行为、超时时间长短、只读属性
+            事务的传播行为：
+                Required：新建一个事务，如果存在一个事务就加入它，一起提交一起回滚 //一荣俱荣、一损俱损
+                Requires_new：总是新建一个事务，如果存在一个事务则将其挂起 //自私的事务，我可以影响别人，别人不可以影响我。
+                nested：嵌套，如果有一个事务，则已嵌套事务的形式存在 //集体和个人，我不可以影响别人，别人可以影响我。
+        【demo2只是构建一个事务的场景】pom.xml、UserService、AccountService
+    【demo3-tx_template】
+        【导包】spring-context、spring-test、spring-jdbc、junit
+               druid、mysql-connector-java
+        【Spring配置】
+               注册datasource、jdbcTemplate
+        【dao层】AccountDao、AccountDaoImpl
+               //和数据库直接打交道
+               包含两个方法：selectMoneyById()、updateMoneyById()
+               jdbcTemplate(sql,int.class,id)、jdbcTemplate(sql,money,id)
+        【service层】AccountService、AccountServiceImpl
+               //具体的业务逻辑实现
+               包含一个转账方法：transfer()，指定转账者给收账者转多少钱。
+               注入AccountDao，并调用selectMoneyById()、updateMoneyById()进行计算。
+        【没有增加事务出现问题】
+                此时，在两条updateMoneyById()语句直接制造一个除零异常，运行代码发现数据库中，转账者转了钱，但是收账者并没有收到钱。
+        【采用手动管理事务的方式】
+
 
 
 

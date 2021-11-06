@@ -3,19 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>SSMDemo</artifactId>
+        <artifactId>Spring04-Tx</artifactId>
         <groupId>com.bupt</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Spring04-Tx</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>demo04-jdbc_template</module>
-        <module>demo2-propagation_introduction</module>
-        <module>demo3-tx_template</module>
-    </modules>
-
+    <artifactId>demo2-propagation_introduction</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.4.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 </project>
