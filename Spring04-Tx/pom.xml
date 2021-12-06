@@ -17,6 +17,7 @@
         <module>demo3-tx_template</module>
         <module>demo4-tx_proxy</module>
         <module>demo5-tx_advisor</module>
+        <module>demo6-tx_annotation</module>
     </modules>
 
 

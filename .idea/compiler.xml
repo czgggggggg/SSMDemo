@@ -26,6 +26,7 @@
         <module name="demo5-advisor" />
         <module name="demo5-tx_advisor" />
         <module name="demo5_regist" />
+        <module name="demo6-tx_annotation" />
         <module name="demo6_factory" />
         <module name="demo7-lifecycle" />
         <module name="Mybatis01" />

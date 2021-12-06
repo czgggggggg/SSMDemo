@@ -526,6 +526,25 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   <aop:config>
                       <aop:pointcut> -> id、expression
                       <aop:advisor> -> advice-ref、pointcut-ref
+    【demo6-tx_annotation】
+         //该方式最简单、最重要！！！
+        【直接复制demo5的依赖和纯业务代码】
+        【application.xml】
+            //基本配置
+              [1]<context:component-scan>
+              [2]DruidDataSource
+              [3]JdbcTemplate
+            //最终配置
+              [4]DataSourceTransactionManager
+            //注解驱动 注解开关
+              [5]<tx:annotation-driven> -> transaction-manager
+        【AccountServiceImpl.java】
+            transfer()方法上增加@Transactional注解
+                测试：此时报除零异常，且不会出现数据库更改不一致的问题。
+            @Transaction注解还可以添加各种属性
+                例如：
+                    @Transactional(isolation = Isolation.REPEATABLE_READ,propagation = Propagation.REQUIRED,
+                                   readOnly = true,noRollbackFor = java.lang.ArithmeticException.class)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

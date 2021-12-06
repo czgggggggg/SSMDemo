@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="424a57ca-3057-475f-9b31-ba3655c3dd81" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/java/com/bupt/dao/AccountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/java/com/bupt/dao/AccountDapImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/java/com/bupt/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/java/com/bupt/service/AccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/resources/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/test/java/com/bupt/TransferTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/dao/AccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/dao/AccountDapImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/service/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/resources/application.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/test/java/com/bupt/TransferTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spring04-Tx/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Spring04-Tx/pom.xml" afterDir="false" />
@@ -52,6 +52,7 @@
     <ignored path="$PROJECT_DIR$/Spring04-Tx/demo1-jdbc_template/target/" />
     <ignored path="$PROJECT_DIR$/Spring04-Tx/demo4-tx_proxy/target/" />
     <ignored path="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/target/" />
+    <ignored path="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,15 +104,15 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="0-SNAPSHOT" value="3" />
-          <entry key="VersionControl" value="8" />
+          <entry key="VersionControl" value="10" />
           <entry key="class" value="7" />
           <entry key="html" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="285" />
+          <entry key="java" value="294" />
           <entry key="properties" value="3" />
           <entry key="ps1" value="1" />
           <entry key="vue" value="2" />
-          <entry key="xml" value="183" />
+          <entry key="xml" value="193" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -119,44 +120,75 @@
           <entry key="CLASS" value="7" />
           <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="285" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JAVA" value="294" />
+          <entry key="PLAIN_TEXT" value="11" />
           <entry key="Properties" value="3" />
           <entry key="UML" value="3" />
           <entry key="Vue.js" value="2" />
-          <entry key="XML" value="183" />
+          <entry key="XML" value="193" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="VersionControl" value="18655" />
+          <entry key="VersionControl" value="18912" />
           <entry key="dummy" value="13" />
           <entry key="ft" value="22" />
           <entry key="html" value="51" />
-          <entry key="java" value="10756" />
+          <entry key="java" value="10790" />
           <entry key="properties" value="45" />
-          <entry key="xml" value="3065" />
+          <entry key="xml" value="3072" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="51" />
-          <entry key="JAVA" value="10756" />
-          <entry key="PLAIN_TEXT" value="18668" />
+          <entry key="JAVA" value="10790" />
+          <entry key="PLAIN_TEXT" value="18925" />
           <entry key="Properties" value="45" />
           <entry key="VTL" value="22" />
-          <entry key="XML" value="3065" />
+          <entry key="XML" value="3072" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/test/java/com/bupt/TransferTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VersionControl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="252">
+              <caret line="542" lean-forward="true" selection-start-line="542" selection-end-line="542" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/test/java/com/bupt/TransferTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+              <folding>
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/service/AccountServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo7_tx_annotation/src/main/java/com/cskaoyan/service/AccountServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -234,10 +266,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/test/java/com/bupt/AdvisorTest.java" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/resources/application.xml" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/src/main/java/com/bupt/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Spring02-AOP/demo5-advisor/pom.xml" />
         <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/pom.xml" />
         <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/main/java/com/bupt/service/UserService.java" />
         <option value="$PROJECT_DIR$/Spring03-Aspect/demo1-aspectj/src/test/java/com/bupt/AspectjTest.java" />
@@ -284,7 +312,11 @@
         <option value="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/pom.xml" />
         <option value="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/test/java/com/bupt/TransferTest.java" />
         <option value="$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/resources/application.xml" />
+        <option value="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/test/java/com/bupt/TransferTest.java" />
+        <option value="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/resources/application.xml" />
         <option value="$PROJECT_DIR$/VersionControl" />
+        <option value="$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/service/AccountServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -401,128 +433,6 @@
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
               <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
-              <item name="demo4-tx_proxy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bupt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
               <item name="demo5-tx_advisor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -635,6 +545,128 @@
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
               <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
               <item name="demo5-tx_advisor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="Spring04-Tx" type="462c0819:PsiDirectoryNode" />
+              <item name="demo6-tx_annotation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -671,7 +703,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/IDEAProjects/SSMDemo/Spring01-IOC/demo1_introduction/src/test/java/com/bupt/IntroductionTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1638783872793" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1638789866905" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/test/java/com/bupt" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ContractDecWeb" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -688,11 +720,11 @@
       <recent name="com.bupt.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjects\SSMDemo\Spring04-Tx\demo6-tx_annotation\src\main\java" />
       <recent name="D:\IDEAProjects\SSMDemo\Spring04-Tx\demo5-tx_advisor\src\main\resources" />
       <recent name="D:\IDEAProjects\SSMDemo\Spring04-Tx\demo5-tx_advisor\src\main\java" />
       <recent name="D:\IDEAProjects\SSMDemo\Spring04-Tx\demo4-tx_proxy\src\main\resources" />
       <recent name="D:\IDEAProjects\SSMDemo\Spring04-Tx\demo4-tx_proxy\src\main\java" />
-      <recent name="D:\IDEAProjects\SSMDemo\Spring03-Aspect\demo2-aspect_annotation\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -707,21 +739,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TransferTest.test (2)">
-    <configuration name="IocTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo01-jdbc_template" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bupt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bupt" />
-      <option name="MAIN_CLASS_NAME" value="com.bupt.IocTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TransferTest.test (3)">
     <configuration name="TransferTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo3-tx_template" />
       <extension name="coverage">
@@ -754,6 +772,22 @@
     </configuration>
     <configuration name="TransferTest.test (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo5-tx_advisor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bupt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bupt" />
+      <option name="MAIN_CLASS_NAME" value="com.bupt.TransferTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransferTest.test (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo6-tx_annotation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.bupt.*" />
@@ -848,19 +882,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 8.5.54" />
-      <item itemvalue="JUnit.IocTest" />
       <item itemvalue="JUnit.TransferTest.test" />
       <item itemvalue="JUnit.TransferTest" />
       <item itemvalue="JUnit.TransferTest.test (1)" />
       <item itemvalue="JUnit.TransferTest.test (2)" />
+      <item itemvalue="JUnit.TransferTest.test (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TransferTest.test (3)" />
         <item itemvalue="JUnit.TransferTest.test (2)" />
         <item itemvalue="JUnit.TransferTest.test (1)" />
         <item itemvalue="JUnit.TransferTest" />
         <item itemvalue="JUnit.TransferTest.test" />
-        <item itemvalue="JUnit.IocTest" />
       </list>
     </recent_temporary>
   </component>
@@ -894,14 +928,11 @@
       <workItem from="1638169150817" duration="12000" />
       <workItem from="1638242894079" duration="3836000" />
       <workItem from="1638707831679" duration="7284000" />
-      <workItem from="1638785218021" duration="695000" />
+      <workItem from="1638785218021" duration="2975000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TransferTest_test - 2021.11.06 at 16h 45m 06s.xml">
-      <configuration name="TransferTest.test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TransferTest_test - 2021.11.06 at 16h 45m 21s.xml">
       <configuration name="TransferTest.test" configurationId="JUnit" />
     </history-entry>
@@ -929,9 +960,12 @@
     <history-entry file="TransferTest_test_(2) - 2021.12.06 at 15h 17m 52s.xml">
       <configuration name="TransferTest.test (2)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TransferTest_test_(3) - 2021.12.06 at 19h 18m 39s.xml">
+      <configuration name="TransferTest.test (3)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132721000" />
+    <option name="totallyTimeSpent" value="135001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -942,7 +976,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="设计器" order="3" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.27144772" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.27144772" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="缩略图" order="0" weight="0.32452276" />
@@ -956,7 +990,7 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32892805" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32892805" />
-      <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.21732746" />
+      <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.36563876" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -986,76 +1020,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo1-jdbc_template/src/test/java/com/bupt/SeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo2-propagation_introduction/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo3_propagation_introduction/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="10" selection-start-line="10" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo1-jdbc_template/src/test/java/com/bupt/IocTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo3_propagation_introduction/src/main/java/com/cskaoyan/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo3_propagation_introduction/src/main/java/com/cskaoyan/service/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo4_tx_template/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo4_tx_template/src/main/java/com/cskaoyan/dao/AccountDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" selection-start-line="4" selection-start-column="17" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo4_tx_template/src/main/java/com/cskaoyan/service/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo3-tx_template/src/main/java/com/bupt/dao/AccountDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo3-tx_template/src/main/java/com/bupt/service/AccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1250,13 +1214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/java/com/bupt/dao/AccountDao.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1302,24 +1259,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VersionControl">
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/test/java/com/bupt/TransferTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="527" column="52" selection-start-line="527" selection-start-column="52" selection-end-line="527" selection-end-column="52" />
+        <state relative-caret-position="396">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo7_tx_annotation/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/dao/AccountDapImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/dao/AccountDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo7_tx_annotation/src/main/resources/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/main/resources/application.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        <state relative-caret-position="187">
+          <caret line="15" selection-start-line="15" selection-end-line="18" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/src/test/java/com/bupt/TransferTest.java">
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/resources/application.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="226">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo5-tx_advisor/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day04-tx-课堂/day04-springtx/demo7_tx_annotation/src/main/java/com/cskaoyan/service/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VersionControl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="542" lean-forward="true" selection-start-line="542" selection-end-line="542" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/test/java/com/bupt/TransferTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring04-Tx/demo6-tx_annotation/src/main/java/com/bupt/service/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
         </state>
       </provider>
     </entry>
