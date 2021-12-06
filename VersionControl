@@ -566,6 +566,42 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                 【疑问！！！】如何测试？没有对应部分的代码。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
+    【demo1-web】
+         【web项目的结构】
+             web包 -> tomcat
+             web-root
+             --WEB-INF
+               --class（java和resource里的代码和文件）
+               --lib
+               --xxxjsp（不能够直接访问的资源）
+               --web.xml
+             --（直接可以访问的资源）
+         【pom.xml】
+             导入servlet依赖
+         【web.xml】
+             创建webapp/WEB-INF下的web.xml
+         【打包】
+             按照这样的目录结构打包到tomcat下运行
+             目的：当放发生一些异常的时候，检测打包的目录结构是否符合要求
+             目录结构在哪里看？project structure中有一个actifact:war exploded
+                 如何生成这个war exploded？ -> 手动生成（不建议）
+                                          -> 自动生成 -> pom.xml文件中增加一个packaging=war
+         【pom.xml】
+             增加<packaging>war</packaging>，webapp图标出现小蓝点
+                 小蓝点意味着这是web项目的根路径
+                 //【注意】我添加war后，webapp图标并没有立即出现小蓝点
+                          文件 -> 项目结构 -> facets -> "+"web项目（选择demo1-web）
+                              之后才出现小蓝点
+                          文件 -> 项目结构 -> Artifacts -> "+"War Application Exploded
+                              会自动帮我们把依赖放入到WEB-INF的lib目录中
+             //IDEA中的代码如何打包成web标准目录结构。//决定项目是否能够跑起来。
+             //在IDEA中使用Tomcat
+                 编辑配置 -> Application Server（指定Tomcat）
+                         -> （指定浏览器）
+                         -> URL（http://localhost:8080/）
+                         -> Deployment（"+" -> Select Artifacts to Deploy）
+                                      （Application context）
+          【增加HelloServlet.java、web.xml、index.jsp中的逻辑】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

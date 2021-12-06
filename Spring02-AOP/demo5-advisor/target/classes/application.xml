@@ -14,7 +14,7 @@
     <!--配置advisor-->
     <aop:config>
         <!--<aop:advisor advice-ref="customAdvice" pointcut="execution(public void com.bupt.service.UserServiceImpl.sayHello(String))"/>-->
-        <!--修饰符省略，返回值通配，包名.类名.方法名部分省略首尾通配，参数省略-->
+        <!--修饰符省略，返回值通配，包名.类名.方法名部分省略首尾通配，参数不省略-->
         <aop:advisor advice-ref="customAdvice" pointcut="execution(* *.bu*..*(String))"/><!--这里参数不要省略，省略就代表无参了，aop会不生效-->
     </aop:config>
 

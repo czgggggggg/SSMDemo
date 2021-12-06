@@ -12,10 +12,10 @@
     <context:component-scan base-package="com.bupt"/>
 
     <aop:config>
-        <aop:pointcut id="mypoint" expression="execution(* com..*(*))"/>
+        <!--<aop:pointcut id="mypoint" expression="execution(* com..*(*))"/>-->
         <aop:aspect ref="customAspect">
             <!--<aop:pointcut id="mypoint" expression="execution(public void sayHello1(String))"/>-->
-
+            <aop:pointcut id="mypoint" expression="execution(* com..*(*))"/>
             <aop:before method="mybefore" pointcut-ref="mypoint"/>
             <aop:after method="myafter" pointcut-ref="mypoint"/>
             <aop:around method="myaround" pointcut-ref="mypoint"/>

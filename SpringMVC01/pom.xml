@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>SpringMVC01</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>demo1-web</module>
+    </modules>
 
 
 </project>
