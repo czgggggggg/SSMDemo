@@ -18,6 +18,7 @@
         <module>demo4-tx_proxy</module>
         <module>demo5-tx_advisor</module>
         <module>demo6-tx_annotation</module>
+        <module>demo7-tx_annotation_javaconfig</module>
     </modules>
 
 

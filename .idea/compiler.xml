@@ -29,6 +29,7 @@
         <module name="demo6-tx_annotation" />
         <module name="demo6_factory" />
         <module name="demo7-lifecycle" />
+        <module name="demo7-tx_annotation_javaconfig" />
         <module name="Mybatis01" />
         <module name="Mybatis02" />
         <module name="Mybatis03" />

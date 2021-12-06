@@ -545,6 +545,25 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                 例如：
                     @Transactional(isolation = Isolation.REPEATABLE_READ,propagation = Propagation.REQUIRED,
                                    readOnly = true,noRollbackFor = java.lang.ArithmeticException.class)
+    【demo7-tx_annotation_javaconfig】
+        【Application.java】
+            【类上的注解】
+                @Configuration
+                @ComponentScan(basePackages = "com.bupt")
+                @EnableTransactionManagement
+                @EnableAspectJAutoProxy
+            【方法】
+                [1]druidDatasource()
+                    //@Bean注解中可以指定组件的id
+                    //@Bean注解中如果没有指定id，以方法名作为默认的id
+                    //方法体里面写一个实例化的过程
+                    //new后面跟的class与<bean>标签中的class属性一致
+                [2]jdbcTemplate()
+                    //如果当前组件依赖于容器中的其他组件，可以通过传入形参的形式来进行引用
+                    //如果这个类型的组件不止一个，通过@Qualifier来指定id，使用方式就类似于Autowired
+                [3]transactionManager()
+            【测试】
+                【疑问！！！】如何测试？没有对应部分的代码。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
