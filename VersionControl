@@ -505,6 +505,27 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                       readonly → 如果只读就只写readonly
                       +XXXException → 针对xxx这个异常不回滚，发生xxx异常依然提交
                       -xxxException → 针对xxx这个异常回滚
+    【demo5-tx_advisor】
+        【依赖、配置、业务代码】
+             直接复制demo4的依赖
+                 另外导入aspectjweaver
+             直接复制demo5的纯业务代码
+             直接复制业务代码相关组件注册
+                 只保留DruidDataSource、JdbcTemplate
+        【application.xml】
+            【使用tx标签，修改application.xml，同时更改application.xml的模板】
+             //增加DataSourceTransactionManager
+             [1]spring事务给我们提供了一个advice → 需要使用到一个tx的标签 tx的schema
+                  <tx:advice> -> id、transaction-manager
+                      <tx:attributes>  //定义
+                          <tx:method>  //<tx:method name="transfer" propagation="REQUIRED" isolation="REPEATABLE_READ" timeout="5"/>
+                                           //测试：此时报除零异常，且不会出现数据库更改不一致的问题。
+                                       //<tx:method name="transfer" propagation="REQUIRED" isolation="REPEATABLE_READ" timeout="5" read-only="true"/>
+                                           //测试：提示出错（Connection is read-only），因为此时service层有修改数据库的操作。
+             [2]手动写了一个advice类 implements MethodInterceptor接口
+                  <aop:config>
+                      <aop:pointcut> -> id、expression
+                      <aop:advisor> -> advice-ref、pointcut-ref
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
