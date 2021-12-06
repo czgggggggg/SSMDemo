@@ -15,6 +15,7 @@
         <module>demo04-jdbc_template</module>
         <module>demo2-propagation_introduction</module>
         <module>demo3-tx_template</module>
+        <module>demo4-tx_proxy</module>
     </modules>
 
 

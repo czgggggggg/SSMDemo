@@ -479,8 +479,32 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                                 //当作一个事务处理的代码。
                             }
                         });
-
                 [4]测试：此时报除零异常，且不会出现数据库更改不一致的问题。
+    【demo4-tx_proxy】
+        【配置和业务代码直接复制demo3】
+             关闭采用了事务的代码，开启没有采用事务的代码 //此时不再注入TransactionTemplate
+             application.xml只保留基础保障性的组件（DruidDataSource、JdbcTemplate）
+                            注释掉DataSourceTransactionManager、TransactionTemplate
+             测试：此时报除零异常，且会出现数据库更改不一致的问题。
+        【生成代理对象、SpringAOP形式】
+             application.xml中打开DataSourceTransactionManager。//TransactionTemplate保持关闭
+             注册一个TransactionProxyFactoryBean
+                 [1]target -> accountServiceImpl  //代理的目标对象（其中包含需要采取事务处理的方法）
+                 [2]transactionManager -> transactionManager  //事务管理器
+                 [3]transactionAttributes
+                      <props> -> <prop key="transfer">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,timeout_5</prop>
+                          //测试：此时报除零异常，且不会出现数据库更改不一致的问题。
+                      <props> -> <prop key="transfer">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,timeout_5,+java.lang.ArithmeticException</prop>
+                          //测试：此时报除零异常，且会出现数据库更改不一致的问题。
+                          //+java.lang.ArithmeticException 意味着 发生这个异常的时候依然提交
+                 【关注一下事务定义的写法】
+                      key = 方法名 value = definition
+                      propagation → PROPAGATION_REQUIRED PROPAGATION_REQUIRES_NEW
+                      isolation → ISOLATION_REPEATABLE_READ ISOLATION_DEFAULT
+                      timeout → timeout_5 5秒超时时间，单位是秒
+                      readonly → 如果只读就只写readonly
+                      +XXXException → 针对xxx这个异常不回滚，发生xxx异常依然提交
+                      -xxxException → 针对xxx这个异常回滚
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
