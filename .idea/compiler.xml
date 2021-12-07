@@ -16,6 +16,7 @@
         <module name="demo2-annotation" />
         <module name="demo2-aspect_annotation" />
         <module name="demo2-propagation_introduction" />
+        <module name="demo2-start" />
         <module name="demo2_ioc1" />
         <module name="demo3-aspectj_annotation" />
         <module name="demo3-dynamic_proxy" />

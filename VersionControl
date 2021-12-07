@@ -602,6 +602,57 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                          -> Deployment（"+" -> Select Artifacts to Deploy）
                                       （Application context）
           【增加HelloServlet.java、web.xml、index.jsp中的逻辑】
+    【demo2-start】
+         【pom.xml】
+             spring-webmvc（5spring+2springmvc+1jcl）、
+                          //spring-aop、spring-beans、spring-context、spring-core、spring-expression、
+                          //spring-web、spring-webmvc、
+                          //spring-jcl
+             servlet-api  //注意<scope>provided</scope>
+             增加<packaging>war</packaging>
+             //部署完成后，target/demo2-start-1.0-SNAPSHOT/WEB-INF/lib目录下可以看到导入的jar包
+         【web.xml】
+             <servlet>标签、<servlet-mapping>标签：
+                 <servlet>
+                     <servlet-name>
+                     <servlet-class>
+                 </servlet>
+                 <servlet-mapping>
+                     <servlet-name>
+                     <servlet-url>
+                 </servlet-mapping>
+             //将org.springframework.web.servlet.DispatcherServlet类对应的url设置为/
+                 此时，除了web根路径下的资源，都要经过DispatcherServlet
+         【构建spring环境】
+             【web.xml】
+             //在web项目中使用spring
+                 <servlet>标签中增加一个<init-param>子标签：
+                     <init-param>
+                         <param-name>contextConfigLocation</param-name>
+                         <param-value>class:application</param-value>
+                     </init-param>
+             【application.xml】
+             //注册组件
+                 //handlerMapping 以组件的id作为请求的url来进行映射
+                 <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+                 //handlerAdapter
+                 <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+                 //handler simpleController → implements Controller   //【注意】这里除了xml组件注册的方式，还可以采用注解的形式：在HelloController类上加上@Component("/hello")
+                 <bean id="/hello" class="com.bupt.controller.HelloController"/>
+         【业务代码】
+             HelloController 继承 Controller  //org.springframework.web.servlet.mvc.Controller
+                 实现handleRequest()方法  //参数类型：HttpServletRequest、HttpServletResponse
+                                         //返回值类型：ModelAndView
+                     ModelAndView modelAndView = new ModelAndView();
+                     //view  viewName写的是相对于web根路径下的视图,写的时候注意最前面有个/
+                     modelAndView.setViewName("/WEB-INF/view/hello.jsp");
+                     //model
+                     modelAndView.addObject("key","czgbyer6666");
+                     return modelAndView;
+             /WEB-INF/view目录中增加一个hello.jsp文件
+                 其中，${key}引入的内容就是addObject()方法中设置的值。
+         【小结】
+             目前一个url对应一个类，还不够灵活。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

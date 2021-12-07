@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC01/demo1-web" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC01/demo2-start" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
