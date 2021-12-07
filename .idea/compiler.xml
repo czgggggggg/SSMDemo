@@ -20,6 +20,7 @@
         <module name="demo2_ioc1" />
         <module name="demo3-aspectj_annotation" />
         <module name="demo3-dynamic_proxy" />
+        <module name="demo3-request_mapping" />
         <module name="demo3-tx_template" />
         <module name="demo3_ioc2" />
         <module name="demo4-spring_aop" />

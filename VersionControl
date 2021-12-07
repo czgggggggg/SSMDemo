@@ -629,7 +629,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                  <servlet>标签中增加一个<init-param>子标签：
                      <init-param>
                          <param-name>contextConfigLocation</param-name>
-                         <param-value>class:application</param-value>
+                         <param-value>class:application.xml</param-value>
                      </init-param>
              【application.xml】
              //注册组件
@@ -653,6 +653,27 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                  其中，${key}引入的内容就是addObject()方法中设置的值。
          【小结】
              目前一个url对应一个类，还不够灵活。
+----【demo3-request_mapping】
+         【pom.xml】
+             //war
+             //spring-webmvc、servlet-api
+         【web.xml】
+             //DispatcherServlet、class:application.xml
+         【application.xml】
+             //<context:component-scan/>
+             //<mvc:annotation-driven/>  //重要：包含了handlerMapping handlerAdapter等一些必须的组件
+         【业务代码】
+             /WEN-INF/view/hello.jsp、HelloController.java
+             //重要：此时不再使用demo2的繁杂形式
+                 HelloController无需继承Controller，而是采用@Controller注解的形式；
+                 也无需实现Controller的handleRequest()方法；
+                     直接定义一个放回置类型为ModelAndView的方法（也无需参数HttpServletRequest、HttpServletResponse）
+                     在方法上直接加上@RequestMapping注解（表明url）
+             //而且，此时可以在同一个Controller中实现多个方法，每个方法都是一个handler，将url与方法建立映射关系。
+         【扩展】
+             在Controller类中可以注入ApplicationContext对象，
+                 并且选择一个方法，通过遍历applicationContext.getBeanDefinitionNames()可以看到，
+                     mvc:annotation-driven还帮我们注册很多其他的组件。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
