@@ -674,6 +674,81 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
              在Controller类中可以注入ApplicationContext对象，
                  并且选择一个方法，通过遍历applicationContext.getBeanDefinitionNames()可以看到，
                      mvc:annotation-driven还帮我们注册很多其他的组件。
+----【demo4-url_mapping】
+         【pom.xml、web.xml、application.xml】
+         【url路径映射】
+             【多个url映射到同一个方法上】
+                 //同一个handler可以接受多个url的映射
+                     //例如，对于hello1()方法，可以在方法上加上@RequestMapping(value = {"hello11","hello12","hello13"})
+             【可以使用通配符*】
+                 //可以通配一个单词的一部分或者一级目录
+                     [1]通配一个单词的一部分
+                     //@RequestMapping("hello2*")       // hello2、hello21、hello222
+                     [2]通配一级目录
+                     //@RequestMapping("hello3/*/abc")  // hello3/abc/abc、hello3/abc/abc
+             【一个url映射到多个handler方法】
+                 可以，后面才能做。
+         【窄化请求@RequestMapping】
+             UserController中有3个方法：register、login、delete，@RequestMapping注解上对应的url路径为：user/register、user/login、user/delete
+             接下来进行窄化请求：
+                 在UserController类上加上注解@RequestMapping("user")
+                 此时3个方法对应的url为：register、login、delete
+             窄化请求的反面案例：
+                 类上加注解@Controller("user") -> 方法上加注解@RequestMapping("login")
+                 访问localhost:8080/user/login  失败
+                 访问localhost:8080/login  成功
+                 原因：@Controller("user")是在注册组件UserController的id，而非进行窄化请求。
+         【请求方法限定】
+             请求方法限定的案例：
+                 类上加注解@Controller("method")
+                     -> get()方法上加注解 @RequestMapping(value="get",method=RequestMethod.GET)
+                     -> post()方法上加注解 @RequestMapping(value="post",method=RequestMethod.POST)
+                     -> multi()方法上加注解 @RequestMapping(value="multi",method={RequestMethod.GET,RequestMethod.POST})
+                 使用postman测试：
+                     GET请求访问：localhost:8080/method/get  成功
+                     POST请求访问：localhost:8080/method/get  失败
+                     GET请求访问：localhost:8080/method/post  失败
+                     POST请求访问：localhost:8080/method/post  成功
+                     GET请求访问：localhost:8080/method/multi  成功
+                     POST请求访问：localhost:8080/method/multi  成功
+             另外，可以在方法上直接加注解 @GetMapping("get")、@PostMapping("post")
+         【请求参数限定】
+             【必须要有特定的参数】
+                 类上加注解@Controller("parameter")
+                     -> login()方法上加注解 @RequestMapping(value="login",param="username")
+                 测试：
+                     访问：localhost:8080/method/login  失败
+                     访问：localhost:8080/method/login?username=czgbyer  成功
+             【多个参数之间的关联】
+                 param={"username","password"}
+                     //参数username和password直接是and关系
+                 测试：
+                     访问：http://localhost:8080/parameter/login?username=root  失败
+                     访问：http://localhost:8080/parameter/login?password=123456  失败
+                     访问：http://localhost:8080/parameter/login?username=root&password=123456  成功
+                     访问：http://localhost:8080/parameter/login?password=123456&username=root  成功
+             【做一个简单的参数值的限定】
+                 param={"username!=root","password"}
+                     //限定了请求参数username的值不能为root
+                 测试：
+                     访问：http://localhost:8080/parameter/login?username=root&password=123456  失败
+                     访问：http://localhost:8080/parameter/login?username=czgbyer&password=123456  成功
+         【Content-Type和Accept】
+             【疑问：没太懂这一块】
+             consumes=String[] Content-Type  //提交给服务器的参数类型
+             produces=String[] Accept        //服务器接收的参数类型
+                 ProduceConsumeLimitController类的
+                     consume()方法上加注解@RequestMapping(value = "consume", consumes = "application/abc")
+                     produce()方法上加注解@RequestMapping(value = "produce", produces = "application/json")
+                 使用postman测试：
+                     访问：http://localhost:8080/consume
+                         没有选择Content-Type  失败
+                         选择Content-Type，且值为application/abc  成功
+                         选择Content-Type，且值为application/abcz  失败
+                     访问：http://localhost:8080/produce
+                         没有选择Accept  成功
+                         选择Accept，且值为application/json  成功
+                         选择Accept，且值为application/jsonz  失败
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

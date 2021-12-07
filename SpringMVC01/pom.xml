@@ -15,6 +15,7 @@
         <module>demo1-web</module>
         <module>demo2-start</module>
         <module>demo3-request_mapping</module>
+        <module>demo4-url_mapping</module>
     </modules>
 
 

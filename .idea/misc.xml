@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC01/demo1-web" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC01/demo2-start" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC01/demo3-request_mapping" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC01/demo4-url_mapping" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
