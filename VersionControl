@@ -1,11 +1,11 @@
 Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e401fd3c24907e83
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring01-IOC】
-    【demo1_introduction】
+----【demo1_introduction】
          【控制就是获得实例的过程】UserService、UserServiceImpl、
              以前我们通过new来获取一个实例对象，现在可以使用Spring容器来获取实例对象。
              注意Junit的使用。pom.xml中scope范围对应test。 //@Test注解
-    【demo2_ioc1】
+----【demo2_ioc1】
          【准备】
              【导包spring-context】
                  spring-context包括spring-expression、spring-core（包括spring-jcl）、spring-aop、spring-beans
@@ -33,7 +33,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                  获取实例对象：applicationContext.getBean(UserServiceImpl.class); //通过要加载的类的类型来获取实例对象。
              【方式1和方式2的比较】
                  同一个类型的组件不唯一（也就是在application.xml中用不同的id注册了两次），则方式1不会报异常，而方式2会报异常。
-    【demo3_ioc2】
+----【demo3_ioc2】
          【业务代码】User、UserDao、UserDaoImpl、UserService、UserServiceImpl
               //lombok的使用
               //application.xml中，bean标签的property子标签的name属性和ref属性。
@@ -57,14 +57,14 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
              [3]ClassPathXmlApplicationContext和FileSystemXmlApplicationContext的比较
                    两者获取到的bean不是同一个，因为上下文就不是同一个。
              //Ctr+H查找键，向上查找、向下查找。
-    【demo4_scope】
+----【demo4_scope】
          【bean的作用域】
              //默认情况下：true          //获得的是同一个bean
              //scope=singleton  true   //获得的是同一个bean
              //scope=prototype  false  //获得的不是同一个bean
          【singleton，但是上下文不同】
              获取的不是同一个bean，因为spring容器上下文不同。
-    【demo5_regist】NoArgsConstructorBean、AllArgsConstructorBean、application.xml、registTest
+----【demo5_regist】NoArgsConstructorBean、AllArgsConstructorBean、application.xml、registTest
          【组件注册---无参构造】
              <com.bean>标签的子标签<property>的name属性（和bean的成员变量一致）、value属性（注意和ref属性的区别）
          【组件注册---有参构造】
@@ -73,7 +73,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   采用lombok的@AllArgsConstructor注解，则显然和成员变量一致，
                   否则，一定要注意有参构造函数的形参名！（如示例中的usernameA和passwordA）
          //lombok的@NoArgsConstructor注解、@AllArgsConstructor注解
-    【demo6_factory】
+----【demo6_factory】
           //静态工厂：在静态工厂类的静态方法中return一个新创建的bean对象。
             实例工厂：在实例工厂类的非静态方法中return一个新创建的bean对象。
          【se的形式】
@@ -89,12 +89,12 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                     bean标签（实例工厂对象）：id、class（指向实例工厂）
                  [2]然后在通过实例工厂的实例对象来获取bean对象
                     bean标签（bean对象）：id、factory-bean（实例工厂对象的id）、factory-method（实例工厂中创建bean对象的非静态方法的方法名）
-    【demo7_lifecycle】
+----【demo7_lifecycle】
          【疑问】这一块还是比较迷
          //bean标签中的init-method属性、destroy-method属性。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring02-AOP】
-    【demo1-collection】
+----【demo1-collection】
          //创建一个集合Bean，在类中创建各种集合类型的成员变量。  //CollectionBean
          //成员变量的类型有array、list、set、map、properties
          //包含这些类型的成员变量的bean怎么在spring配置文件中进行注册，是这个模块要解决的问题。
@@ -123,7 +123,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                       国产：<entry>标签&key属性 -> <bean>标签&class属性（id属性不需要） -> <property>子标签&name属性&value属性。
                       进口1：<entry>标签&key属性&value-ref属性（指向要引用的已经注册的bean的id）
                       进口2：<entry>标签&key属性 -> <ref>子标签&&bean属性（指向要引用的已经注册的bean的id）。
-    【demo2-annotation】
+----【demo2-annotation】
           //spring配置文件中，<context:component-scan base-package="com.bupt"/>
             <context:component-scan>标签：打开注解扫描开关。
                 base-package属性：扫描base-package属性值对应的包及其全部子包。
@@ -190,7 +190,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                       pom.xml中加入spring-test包。
                       在测试类中，如果直接注入UserService组件，并调用其sayHi方法，会报空指针异常。
                       要先在测试类上加上@RunWith(SpringJUnit4ClassRunner.class)、@ContextConfiguration("classpath:application.xml")，才能生效。【有点迷】
-    【demo3-dynamic_proxy】
+----【demo3-dynamic_proxy】
          //AOP---手动实现
          【AOP基础概念】
              AOP：面向切面编程。 //把需要增强的方法放到一起，做一个统一的调用。
@@ -235,7 +235,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                                  在这条赋值语句的前后写增强的语句。
                                  return invoke
              [3]proxy对象userServiceProxy调用原来的方法（已经被增强）。
-    【demo4-spring_aop】
+----【demo4-spring_aop】
          //AOP---采用spring aop的形式实现
          【业务代码】UserService、UserServiceImpl
          //首先，打开注解扫描开关，<context:component-scan>标签。
@@ -261,7 +261,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
              //[1]@Autowired  //直接注入UserService组件，并调用其sayHi方法，会报空指针异常。
              //[2]@Resource(name = "userServiceImpl")  //AOP未生效
              //[3]@Resource(name = "userServiceProxy") //AOP生效
-    【demo5-advisor】
+----【demo5-advisor】
         //demo4-spring_aop中的代理对象是在application.xml中手动注册生成的，目前只有一个代理对象。
           如果需要100个代理对象呢？手动生成会非常麻烦。
         【准备工作】
@@ -296,7 +296,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                          //注意：这里参数不要省略，省略就代表无参了，aop会不生效
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring03-Aspect】
-    【demo1-aspectj】
+----【demo1-aspectj】
         【导包】spring-context、spring-test、junit、lombok、aspectjweaver
         【业务代码】UserService、UserServiceImpl
         【定义切面类】CustomAspect
@@ -348,7 +348,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
             around的返回值是Object，形参是ProceedingJoinPoint。
             after-returning、after-throwing都有特殊类型的形参。
             <aop:pointcut>标签可以写在<aop:aspect>标签里面，也可以写在外面。
-    【demo2-aspect_annotation】
+----【demo2-aspect_annotation】
         //通过注解来使用aspectj，不再使用<aop:config>标签。
         【准备】复制deno1种的业务代码、切面类、测试类、pom.xml
         【注解方式】
@@ -371,7 +371,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                      @Around("mypointcut()")
                      @AfterReturning(value="mypointcut()",returning="object")
                      @AfterThrowing(value="mypointcut()",throwing="throwable")
-    【demo3-aspectj_annotation】
+----【demo3-aspectj_annotation】
          //使用自定义注解来使用pointcut
         【导包】spring-context、spring-test、junit、lombok、aspectjweaver
         【application.xml】
@@ -397,7 +397,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
             @ContextConfiguration("classpath:application.xml")
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Spring04-Tx】
-    【demo1-jdbc_template】
+----【demo1-jdbc_template】
         【导包】spring-jdbc、mysql-connect-java、druid、junit //先不导入spring-context、spring-test
                注意mysql驱动mysql-connect-java的版本要和电脑上安装的mysql的版本一致。比如mysql版本8.0.26，驱动的版本是8.0.11
         【se的形式】SeTest
@@ -417,7 +417,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
             [1]把jdbcTemplate的导入和使用交给AccountDao，接口只提供外部一个方法selectNameById()。
             [2]IocTest类只需要导入AccountDao并调用selectNameById()方法就可以对数据库进行查询操作。
         【jdbcDaoSupport这块没懂，跳过】
-    【demo2-propagation_introduction】
+----【demo2-propagation_introduction】
         【知识点】
             事务的4个特性： A-原子性、C-一致性、I-隔离性、D-持久性
             并发引起的问题：脏读、不可重复读、幻读（虚读）
@@ -445,7 +445,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                 Requires_new：总是新建一个事务，如果存在一个事务则将其挂起 //自私的事务，我可以影响别人，别人不可以影响我。
                 nested：嵌套，如果有一个事务，则已嵌套事务的形式存在 //集体和个人，我不可以影响别人，别人可以影响我。
         【demo2只是构建一个事务的场景】pom.xml、UserService、AccountService
-    【demo3-tx_template】
+----【demo3-tx_template】
         【导包】spring-context、spring-test、spring-jdbc、junit
                druid、mysql-connector-java
         【Spring配置】
@@ -480,7 +480,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                             }
                         });
                 [4]测试：此时报除零异常，且不会出现数据库更改不一致的问题。
-    【demo4-tx_proxy】
+----【demo4-tx_proxy】
         【配置和业务代码直接复制demo3】
              关闭采用了事务的代码，开启没有采用事务的代码 //此时不再注入TransactionTemplate
              application.xml只保留基础保障性的组件（DruidDataSource、JdbcTemplate）
@@ -505,7 +505,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                       readonly → 如果只读就只写readonly
                       +XXXException → 针对xxx这个异常不回滚，发生xxx异常依然提交
                       -xxxException → 针对xxx这个异常回滚
-    【demo5-tx_advisor】
+----【demo5-tx_advisor】
         【依赖、配置、业务代码】
              直接复制demo4的依赖
                  另外导入aspectjweaver
@@ -526,7 +526,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   <aop:config>
                       <aop:pointcut> -> id、expression
                       <aop:advisor> -> advice-ref、pointcut-ref
-    【demo6-tx_annotation】
+----【demo6-tx_annotation】
          //该方式最简单、最重要！！！
         【直接复制demo5的依赖和纯业务代码】
         【application.xml】
@@ -545,7 +545,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                 例如：
                     @Transactional(isolation = Isolation.REPEATABLE_READ,propagation = Propagation.REQUIRED,
                                    readOnly = true,noRollbackFor = java.lang.ArithmeticException.class)
-    【demo7-tx_annotation_javaconfig】
+----【demo7-tx_annotation_javaconfig】
         【Application.java】
             【类上的注解】
                 @Configuration
@@ -566,7 +566,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                 【疑问！！！】如何测试？没有对应部分的代码。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC01】
-    【demo1-web】
+----【demo1-web】
          【web项目的结构】
              web包 -> tomcat
              web-root
@@ -602,7 +602,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                          -> Deployment（"+" -> Select Artifacts to Deploy）
                                       （Application context）
           【增加HelloServlet.java、web.xml、index.jsp中的逻辑】
-    【demo2-start】
+----【demo2-start】
          【pom.xml】
              spring-webmvc（5spring+2springmvc+1jcl）、
                           //spring-aop、spring-beans、spring-context、spring-core、spring-expression、

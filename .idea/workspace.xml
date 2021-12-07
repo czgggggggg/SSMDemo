@@ -7,18 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424a57ca-3057-475f-9b31-ba3655c3dd81" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/SpringMVC01/demo2-start/demo2-start.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC01/demo2-start/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC01/demo2-start/src/main/java/com/bupt/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC01/demo2-start/src/main/resources/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC01/demo2-start/src/main/webapp/WEB-INF/view/hello.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC01/demo2-start/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC01/demo2-start/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VersionControl" beforeDir="false" afterPath="$PROJECT_DIR$/VersionControl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -141,7 +130,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="VersionControl" value="21729" />
+          <entry key="VersionControl" value="21861" />
           <entry key="dummy" value="13" />
           <entry key="ft" value="22" />
           <entry key="html" value="51" />
@@ -156,7 +145,7 @@
           <entry key="HTML" value="51" />
           <entry key="JAVA" value="11800" />
           <entry key="JSP" value="55" />
-          <entry key="PLAIN_TEXT" value="21742" />
+          <entry key="PLAIN_TEXT" value="21874" />
           <entry key="Properties" value="45" />
           <entry key="VTL" value="22" />
           <entry key="XML" value="3225" />
@@ -169,8 +158,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VersionControl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="652" column="52" selection-start-line="652" selection-start-column="52" selection-end-line="652" selection-end-column="52" />
+            <state relative-caret-position="1579">
+              <caret line="654" column="32" selection-start-line="654" selection-start-column="32" selection-end-line="654" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -670,7 +659,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/IDEAProjects/SSMDemo/Spring01-IOC/demo1_introduction/src/test/java/com/bupt/IntroductionTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1638867832492" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1638868190787" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/test/java/com/bupt" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringMVC01/demo1-web/web/WEB-INF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -910,7 +899,7 @@
       <workItem from="1638242894079" duration="3836000" />
       <workItem from="1638707831679" duration="7284000" />
       <workItem from="1638785218021" duration="12461000" />
-      <workItem from="1638859174214" duration="3940000" />
+      <workItem from="1638859174214" duration="4455000" />
     </task>
     <servers />
   </component>
@@ -947,7 +936,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148427000" />
+    <option name="totallyTimeSpent" value="148942000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -960,7 +949,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -972,7 +960,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="缩略图" order="0" weight="0.32452276" />
       <window_info anchor="bottom" id="Spring" order="1" weight="0.32892805" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49932975" weight="0.25403818" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" sideWeight="0.49932975" visible="true" weight="0.3024963" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50067025" side_tool="true" weight="0.32892805" />
       <window_info anchor="bottom" id="Statistic" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
@@ -981,7 +969,7 @@
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49932975" weight="0.32892805" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32892805" />
-      <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.34067547" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.34067547" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -1350,8 +1338,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VersionControl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="652" column="52" selection-start-line="652" selection-start-column="52" selection-end-line="652" selection-end-column="52" />
+        <state relative-caret-position="1579">
+          <caret line="654" column="32" selection-start-line="654" selection-start-column="32" selection-end-line="654" selection-end-column="32" />
         </state>
       </provider>
     </entry>
