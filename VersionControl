@@ -749,8 +749,64 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                          没有选择Accept  成功
                          选择Accept，且值为application/json  成功
                          选择Accept，且值为application/jsonz  失败
+----【demo5-return_value】
+         【pom.xml、web.xml、application.xml】
+             都直接复制demo4的
+         【返回void】
+             //返回值为void并不推荐使用
+             ReturnValueController类上加注解@Controller
+             returnVoid()方法的返回值类型为void，参数类型为：HttpServletRequest、HttpServletResponse
+                 request.getRequestDispatcher("/WEB-INF/view/void.jsp").forward(request,response);
+             测试：
+                 访问：http://localhost:8080/return/void 成功
+         【返回String】
+             //最终还是想处理ModelAndView
+             returnString()方法的返回值类型为String，参数类型为：Model
+                 model.addAttribute("key","czgbyer nb666 !!!");
+                 return "/WEB-INF/view/string.jsp";
+             测试：
+                 访问：http://localhost:8080/return/string 成功
+                 【去掉viewName前面的/】
+                     再访问：http://localhost:8080/return/string 失败   //实际访问的是：http://localhost:8080/return/WEB-INF/view/string.jsp
+                     如果把前面的/去掉了，那么访问的就是一个相对的页面；相对于请求url的一个页面。
+                     url:/hello  viewname: WEB-INF/view/hello.jsp
+                         → /WEB-INF/view/hello.jsp
+                     url:/hello/abc/def  viewname:view/hello.jsp
+                         → /hello/abc/view/hello.jsp
+             【逻辑视图名】
+                 在application.xml中进行如下配置：
+                     <!--视图解析器 配置逻辑视图名-->
+                     <!--配置之后所有的视图名都做拼接-->
+                     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                         <property name="prefix" value="/WEB-INF/view/"/><!--前缀-->
+                         <property name="suffix" value=".jsp"/><!--后缀-->
+                     </bean>
+                 此时，returnString()方法只需返回 “string”，即可正确访问。
+                 测试：
+                     returnString()方法返回 “string”
+                     访问：http://localhost:8080/return/string  成功
+                     returnString()方法返回 “/WEB-INF/view/string.jsp”
+                     访问：http://localhost:8080/return/string  失败  //返回的是 “/WEB-INF/view//WEB-INF/view/string.jsp.jsp”
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC02】
+----【demo1-forward_redirect】
+         【pom.xml、web.xml、application.xml】
+             都直接复制SpringMVC01的demo4的
+         StringHelloController类上加注解@Controller
+             包含4个方法：forward()、receiveForward()、redirect()、receiveRedirect()
+             对应的url为：request/forward、receive/forward、request/redirect、receive/redirect
+             其中，forward()方法通过 return "forward:/receive/forward"; 转发到receiveForward()方法；
+                  redirect()方法通过 return "redirect:/receive/redirect"; 重定向到receiveRedirect()方法。
+                  //注意最前面加上/,如果不加的话，做的也是相对路径
+                  receiveForward()方法 return "/WEB-INF/view/forward.jsp";
+                  receiveRedirect()方法 return "/WEB-INF/view/redirect.jsp";
+         测试：
+             访问：http://localhost:8080/request/forward
+                  成功显示forward.jsp的内容。
+                  结果页面仍然为：http://localhost:8080/request/forward
+             访问：http://localhost:8080/request/redirect
+                  成功显示redirect.jsp的内容。
+                  结果页面变为：http://localhost:8080/receive/redirect
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC03】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
