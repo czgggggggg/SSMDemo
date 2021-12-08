@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo1-forward_redirect</module>
+        <module>demo2-fetch_param</module>
     </modules>
 
 

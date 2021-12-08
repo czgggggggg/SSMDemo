@@ -795,8 +795,8 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
          StringHelloController类上加注解@Controller
              包含4个方法：forward()、receiveForward()、redirect()、receiveRedirect()
              对应的url为：request/forward、receive/forward、request/redirect、receive/redirect
-             其中，forward()方法通过 return "forward:/receive/forward"; 转发到receiveForward()方法；
-                  redirect()方法通过 return "redirect:/receive/redirect"; 重定向到receiveRedirect()方法。
+             其中，forward()方法通过 return "forward:/receive/forward"; 转发到receiveForward()方法；  //这里，/receive/forward不是viewName，而是url
+                  redirect()方法通过 return "redirect:/receive/redirect"; 重定向到receiveRedirect()方法。  //这里，/receive/redirect不是viewName，而是url
                   //注意最前面加上/,如果不加的话，做的也是相对路径
                   receiveForward()方法 return "/WEB-INF/view/forward.jsp";
                   receiveRedirect()方法 return "/WEB-INF/view/redirect.jsp";
@@ -807,6 +807,58 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
              访问：http://localhost:8080/request/redirect
                   成功显示redirect.jsp的内容。
                   结果页面变为：http://localhost:8080/receive/redirect
+----【demo2-fetch_param】
+         【pom.xml、web.xml、application.xml】
+             都直接复制SpringMVC01的demo4的
+         【通过request获取参数】
+             原始的方式 -> javaee阶段的方式
+             ParamController -> paramRequest() //paramRequest()方法的参数类型为HttpServletRequest
+             paramRequest()方法中通过request.getParameter()获取请求参数。
+             测试1：
+                 访问：http://localhost:8080/param/request?username=czgbyer  成功，控制台打印出username信息。
+             测试2：
+                 此时再webapp目录下新增一个index.jsp，通过form表单填写请求参数。
+                 访问：http://localhost:8080  成功，跳转到http://localhost:8080/param/request，控制台打印出username信息。
+         【直接封装】
+             ParamController -> paramDirect()
+             //paramDirect()方法的参数名等于请求的参数名
+             //注解接收的参数：值类型String、int、double、boolean
+             测试：
+                 访问：http://localhost:8080  成功，跳转到http://localhost:8080/param/direct，控制台打印出username、password信息。
+             【以包装类接收】
+                 以非包装类（int、double、boolean）直接封装存在问题，如果请求参数的值没有填写会访问失败。
+                     但是只有String类型的参数的值不填写，则不会访问失败。
+                 //没有提交的参数的默认值为String类型的null，无法转换成非包装类的boolean和int类型，而包装类Boolean和Integer是可以的。
+             测试1：
+                 以int、boolean类型接收参数
+                 不填写int、boolean类型参数对应的值，则访问失败
+             测试2：
+                 以Int、Boolean类型接收参数
+                 不填写Int、Boolean类型参数对应的值，则访问仍然成功，控制台输出对应参数的值均为null。
+         【以javabean的形式接收】
+             pom.xml导入lombok；新建User类；User类和index.jsp中包含username、password、age、married
+             将post参数全部封装到User中，请求参数直接为User类型。
+             //注意：set方法的名称要和请求参数名称对应。
+             测试：
+                 访问：http://localhost:8080  成功，跳转到http://localhost:8080/param/javabean，控制台输出user信息。
+         【以嵌套javabean的形式接收】
+             再新建一个UserDetail对象，将phone、email封装到UserDetail中。
+             index.jsp中phone和email对应的name为 userDetail.phone、userDetail.email
+             User类中新增一个UserDetail类型的成员变量
+             ParamController类中的paramDirect()方法还是以User类型接收参数。
+             测试：
+                 访问：http://localhost:8080  成功，跳转到http://localhost:8080/param/javabean/nested，控制台输出user信息（包含userDetail信息）。
+         【javabean中的数组】
+             index.jsp中3个爱好的name都是hobbys
+             User类中新增一个String[]类型的hobbys
+             测试：
+                 访问：http://localhost:8080  成功，跳转到http://localhost:8080/param/javabean/nested/array，控制台输出user信息（包含userDetail信息）（包含hobbys信息）。
+         【javabean中的list】
+             新建一个Course类，包含courseName、score
+             User类中新增List<Course>类型的成员变量courses
+             index.jsp中，提交3个课程信息，对应的name分别是courses[0].courseName、courses[0].score、courses[1].courseName、courses[1].score、courses[2].courseName、courses[2].score
+             测试：
+                 访问：http://localhost:8080  成功，跳转到http://localhost:8080/param/javabean/nested/list，控制台输出user信息（包含userDetail信息）（包含hobbys信息）（包含课程信息）。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC03】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
