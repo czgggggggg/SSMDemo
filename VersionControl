@@ -961,6 +961,57 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                    getCookieValue()方法的参数：HttpServletCookie cookie, Model model
                    request.getCookies()获取cookies，
                    再通过遍历cookies中的每一个cookie，调用getName()、getValue()方法获取cookie信息。
+----【demo5-restful】
+          pom.xml（spring-mvc、servlet-api、lombok）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          【@PathVariable从请求url中取值】
+               编写业务逻辑：User、UserService、UserServiceImpl、UserController
+               其中，UserController中注入UserService
+                   queryUserById()方法上加注解：@RequestMapping("user/query/{idz}")
+                   queryUserById()方法的参数为：@PathVariable("idz") int id
+                   此时id的值从@RequestMapping("user/query/{idz}")中获取，且必须是@PathVariable("idz")对应的idz
+               测试：
+                  访问：http://localhost:8080/user/query/5  输出的user的username值为czgggggggg
+                  访问：http://localhost:8080/user/query/25  输出的user的username值为czgbyer
+               【仿照csdn风格去写一个接口】
+                  queryArticleDetail()方法上加注解：@RequestMapping("{username}/article/detail/{articleId}")
+                  queryArticleDetail()方法的参数为：@PathVariable("username") String username,
+                                                  @PathVariable("articleId") int articleId)
+                  因此有两部分参数的值要从url中获取。
+                  测试：
+                      访问：http://localhost:8080/czgbyer/article/detail/25  输出的username值为czgbyer，输出的articleId值为25
+          【@RequestParam从请求参数中取值】
+               //要求@RequestParam注解中的值和请求参数名对应，形参的参数名也可以和请求参数名不一致
+                  userOrder()方法上加注解：@RequestMapping("user/order")
+                  userOrder()方法的参数为：@RequestParam("page") int page666,
+                                         @RequestParam("limit") int limit666
+                  这样就能从请求url中获取page666、limit666的值。  //@RequestParam中的page、limit必须和请求url中的请求参数page、limit名称对应。
+                  测试：
+                      访问：http://localhost:8080/user/order?page=1&limit=10  输出page666的值为1，limit666的值为10
+          【@RequestHeader从请求头中取值】
+               getHeaderValue()方法上加注解：@RequestMapping("header/value")
+               getHeaderValue()方法的参数为：@RequestHeader("Accept-Encoding") String acceptEncoding,
+                                           @RequestHeader("Accept") String accept
+                  测试：
+                      访问：http://localhost:8080/header/value  输出Accept-Encoding和Accept的值。
+               另外，getHeaderValue()方法的参数类型也可以是String[]，数组的形式。
+          【@SessionAttribute从session中取值】
+               putSessionValue()方法上加注解：@RequestMapping("put/session/{username}")
+               putSessionValue()方法的参数：HttpSession session,
+                                          @PathVariable("username") String username
+               方法中执行：session.setAttribute("username", "czgbyer");
+               getSessionValue()方法上加注解：@RequestMapping("get/session")
+               getSessionValue()方法的参数：@SessionAttribute("username")
+                                          String username
+               方法中执行：System.out.println("username = " + username);
+               测试：
+                   访问：http://localhost:8080/put/session/czgbyer
+                        http://localhost:8080/get/session
+                        成功获取到username的值。
+               其实使用@SessionAttribute注解的效果和使用HttpSession参数调用getAttribute的效果是一样的。
+          【@CookieValue从cookue中取值】
+               @CookieValue注解的使用同@SessionAttribute，不再做具体描述。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

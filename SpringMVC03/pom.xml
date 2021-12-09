@@ -16,6 +16,7 @@
         <module>demo2-converter</module>
         <module>demo3-file_upload</module>
         <module>demo4-cookie_session</module>
+        <module>demo5-restful</module>
     </modules>
 
 
