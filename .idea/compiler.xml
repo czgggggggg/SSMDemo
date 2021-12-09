@@ -17,6 +17,7 @@
         <module name="demo1_introduction" />
         <module name="demo2-annotation" />
         <module name="demo2-aspect_annotation" />
+        <module name="demo2-converter" />
         <module name="demo2-fetch_param" />
         <module name="demo2-propagation_introduction" />
         <module name="demo2-start" />

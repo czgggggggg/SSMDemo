@@ -886,6 +886,29 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                      <url-pattern>/*</url-pattern>
                  </filter-mapping>
              若此时，debug不显示乱码，而控制台显示乱码，则在tomcat的虚拟机选项中加入-Dfile.encoding=utf-8。  //控制台乱码的情况我有，通过该方式解决。
+----【demo2-converter】
+         【springmvc提供的类型转换器】
+             springmvc已经给我们提供了很多的类型转换器，例如：
+                 married true //String -> Boolean
+                 age     25   //String -> int(Integer)
+             在ConverterController类中注入ConfigurableConversionService，然后在converter()方法中直接打印该类型对象，可以查看springmvc为我们提供了哪些类型转换器。
+         【使用springmvc提供的类型转换器】
+             index.jsp中提交日期数据（input类型为text），submitDate()方法的参数类型为Date，测试结果为访问失败，报错如下：
+                 //Failed to convert from type [java.lang.String] to type [java.util.Date] for value '2021-12-09';
+                 //也就是没有把提交的日期数据从String类型转换为Date类型。
+             解决：
+                 在submitDate()方法的Date类型参数前，加上注解@DateTimeFormat(pattern = "yyyy-MM-dd")
+             测试，成功。
+             另外，也可以将使用上述注解的参数封装到User中。【疑问，我尝试了但没有成功，user中只有username信息，birthday的值为null】
+         【自定义的converter】
+             自定义一个String2DateConverter类，可以将String类型的值转换为Date类型。
+             首先，String2DateConverter类要实现Converter<String, Date>接口，
+                 该接口包含一个 Date convert(String s)方法，
+                 在其中编写转化逻辑。
+             然后，在application.xml中引用该转换器。
+             【备注：这部分感觉很繁杂，有没有太大用处，不具体说明】
+             debug可以发现，使用的是自定义的转换器。
+             此外，还可以自定义类似String2UserConverter的其他的转换器。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

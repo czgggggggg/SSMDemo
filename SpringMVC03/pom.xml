@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo1-character_encoding_filter</module>
+        <module>demo2-converter</module>
     </modules>
 
 
