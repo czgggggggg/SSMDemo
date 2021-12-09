@@ -887,6 +887,9 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                  </filter-mapping>
              若此时，debug不显示乱码，而控制台显示乱码，则在tomcat的虚拟机选项中加入-Dfile.encoding=utf-8。  //控制台乱码的情况我有，通过该方式解决。
 ----【demo2-converter】
+          pom.xml（spring-mvc、servlet-api）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
          【springmvc提供的类型转换器】
              springmvc已经给我们提供了很多的类型转换器，例如：
                  married true //String -> Boolean
@@ -909,6 +912,36 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
              【备注：这部分感觉很繁杂，有没有太大用处，不具体说明】
              debug可以发现，使用的是自定义的转换器。
              此外，还可以自定义类似String2UserConverter的其他的转换器。
+----【demo3-file_upload】
+          pom.xml（spring-mvc、servlet-api）【再导入文件上传包commons-fileupload】
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+         【文件上传】
+             SpringMVC的文件上传非常好做，multipartResolver这个组件处理文件上传。
+             [1]将文件要上传到的目录写入配置文件param.properties中，比如D盘根目录下：  file.upload.directory=d://
+                  在application.xml中添加（指定配置文件）：<context:property-placeholder location="classpath:param.properties"/>
+             [2]注册multipartResolver组件
+                  在application.xml中添加： <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+                  //这个组件很特殊 名字是一个固定值 SpringMVC找这个组件时是按照id去找的。
+             [3]index.jsp
+                  <form>标签再添加一个属性enctype="multipart/form-data"
+                  上传文件的<input>标签的type属性值为file  //注意此处的name="myfile"
+             [4]FileUploadController
+                  FileUploadController类中有一个directory成员变量，用@Value("${file.upload.directory}")注解赋值。
+                  此处直接展示文件上传逻辑：
+                      @RequestMapping("file/upload")
+                      public String fileUpload(MultipartFile myfile) throws IOException {
+                          String originalFilename = myfile.getOriginalFilename();  //上传的文件的名称（包含后缀）
+                          String name = myfile.getName(); //myfile
+
+                          //以file来接收我们的multipartfile
+                          File file = new File(directory, originalFilename);
+                          myfile.transferTo(file);
+
+                          return "/WEB-INF/view/ok.jsp";
+                      }
+                  //注意originalFilename和name的区别。
+                  //另外，fileUpload()方法的参数类型可以是数组形式MultipartFile[]，这样可以接收数组，也就是可以同时上传多个文件。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

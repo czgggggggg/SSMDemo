@@ -11,6 +11,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC02/demo2-fetch_param" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo2-converter" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo3-file_upload" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
