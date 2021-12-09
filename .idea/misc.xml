@@ -9,6 +9,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC01/demo5-return_value" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC02/demo1-forward_redirect" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC02/demo2-fetch_param" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />

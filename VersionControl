@@ -22,7 +22,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                  Class.forName()、aClass.newInstance()
          【使用Spring】
              【在application.xml中注册组件】
-                 <com.bean>标签、id属性、class属性
+                 <com.bupt.bean>标签、id属性、class属性
              【方式1---组件id】IOCTest.test2()
                  spring容器提供了应用上下文applicationContext，通过应用上下文可以获得组件。
                      需要加载spring配置文件 -> 直接写resources（classpath）下的配置文件名。
@@ -66,9 +66,9 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
              获取的不是同一个bean，因为spring容器上下文不同。
 ----【demo5_regist】NoArgsConstructorBean、AllArgsConstructorBean、application.xml、registTest
          【组件注册---无参构造】
-             <com.bean>标签的子标签<property>的name属性（和bean的成员变量一致）、value属性（注意和ref属性的区别）
+             <com.bupt.bean>标签的子标签<property>的name属性（和bean的成员变量一致）、value属性（注意和ref属性的区别）
          【组件注册---有参构造】
-             <com.bean>标签的子标签<constructor-arg>的name属性（和有参构造方法的参数一致，而非和成员变量一致）、value属性。
+             <com.bupt.bean>标签的子标签<constructor-arg>的name属性（和有参构造方法的参数一致，而非和成员变量一致）、value属性。
              重要：name属性的值和有参构造方法的参数一致，而非和成员变量一致。
                   采用lombok的@AllArgsConstructor注解，则显然和成员变量一致，
                   否则，一定要注意有参构造函数的形参名！（如示例中的usernameA和passwordA）
@@ -861,6 +861,31 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                  访问：http://localhost:8080  成功，跳转到http://localhost:8080/param/javabean/nested/list，控制台输出user信息（包含userDetail信息）（包含hobbys信息）（包含课程信息）。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC03】
+----【demo1-character_encoding_filter】
+         【解决post请求出现中文乱码】
+             pom.xml（spring-mvc、servlet-api）
+             application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+             web.xml（DispatcherServlet）
+             index.jsp提交username信息，如果是中文名字，CharacterController.login()方法在控制台打印出的username是乱码。
+             【问题：课程中提到此时debug状态下的username也是乱码的，但是我的并不是】
+             针对debug状态下的username乱码，在web.xml中引入编码过滤器（对于我，显然没有必要）：
+                 <filter>
+                     <filter-name>characterEncodingFilter</filter-name>
+                     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+                     <init-param>
+                         <param-name>encoding</param-name>
+                         <param-value>utf-8</param-value>
+                     </init-param>
+                     <init-param>
+                         <param-name>forceEncoding</param-name>
+                         <param-value>true</param-value>
+                     </init-param>
+                 </filter>
+                 <filter-mapping>
+                     <filter-name>characterEncodingFilter</filter-name>
+                     <url-pattern>/*</url-pattern>
+                 </filter-mapping>
+             若此时，debug不显示乱码，而控制台显示乱码，则在tomcat的虚拟机选项中加入-Dfile.encoding=utf-8。  //控制台乱码的情况我有，通过该方式解决。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

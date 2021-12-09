@@ -1,6 +1,6 @@
-package com.bupt;
+package com.bupt.controller;
 
-import com.bean.User;
+import com.bupt.bean.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

@@ -6,16 +6,16 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- com.bean definitions here -->
-    <com.bean id="noArgs" class="com.bupt.com.bean.NoArgsConstructorBean">
+    <!-- com.bupt.bean definitions here -->
+    <com.bupt.bean id="noArgs" class="com.bupt.com.bupt.bean.NoArgsConstructorBean">
         <property name="username" value="czgbyer"/>
         <property name="password" value="123456"/>
-    </com.bean>
+    </com.bupt.bean>
 
-    <com.bean id="allArgs" class="com.bupt.com.bean.AllAgrsContructorBean">
+    <com.bupt.bean id="allArgs" class="com.bupt.com.bupt.bean.AllAgrsContructorBean">
         <!--<constructor-arg name="username" value="czgggggggg"/>-->
         <!--<constructor-arg name="password" value="123456789"/>-->
         <constructor-arg name="usernameA" value="czgggggggg"/>
         <constructor-arg name="passwordA" value="123456789"/>
-    </com.bean>
+    </com.bupt.bean>
 </beans>

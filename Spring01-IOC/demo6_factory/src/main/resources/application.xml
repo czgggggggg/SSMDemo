@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- com.bean definitions here -->
+    <!-- com.bupt.bean definitions here -->
     <!--静态工厂直接获取bean对象-->
     <bean id="animalFromStaticFactory" class="com.bupt.factory.StaticFactory" factory-method="createAnimal"/>
 

@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- com.bean definitions here -->
+    <!-- com.bupt.bean definitions here -->
     <bean id="lifeCycleBean" class="com.bupt.bean.LifeCycleBean" init-method="myinit" destroy-method="mydestroy">
         <property name="param" value="lifeCycle"/>
     </bean>
