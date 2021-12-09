@@ -942,6 +942,25 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                       }
                   //注意originalFilename和name的区别。
                   //另外，fileUpload()方法的参数类型可以是数组形式MultipartFile[]，这样可以接收数组，也就是可以同时上传多个文件。
+----【demo4-cookie_session】
+          pom.xml（spring-mvc、servlet-api）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          【cookie】
+               //可以往session里面放值、取值
+               putSessionValue()方法包含两个参数：HttpSession session, String username
+               通过url后面带的参数将值传入username，在putSessionValue()方法中通过
+                   session.setAttribute("username",username); 将username存放到session中。
+               getSessionValue()方法包含两个参数：HttpSession session, Model model
+               在getSessionValue()方法中通过
+                   Object username = session.getAttribute("username");获取username，
+                   可以通过 model.addAttribute("username_zzz",username); 将username传给username_zzz，在ok.jsp中由 ${username_zzz}显示。
+          【session】
+               不能直接将Cookie[]类型作为getCookieValue()方法的参数
+               正确的做法：通过HttpServletRequest获取cookies
+                   getCookieValue()方法的参数：HttpServletCookie cookie, Model model
+                   request.getCookies()获取cookies，
+                   再通过遍历cookies中的每一个cookie，调用getName()、getValue()方法获取cookie信息。
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

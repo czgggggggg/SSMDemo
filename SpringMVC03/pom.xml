@@ -15,6 +15,7 @@
         <module>demo1-character_encoding_filter</module>
         <module>demo2-converter</module>
         <module>demo3-file_upload</module>
+        <module>demo4-cookie_session</module>
     </modules>
 
 

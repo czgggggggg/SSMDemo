@@ -28,6 +28,7 @@
         <module name="demo3-request_mapping" />
         <module name="demo3-tx_template" />
         <module name="demo3_ioc2" />
+        <module name="demo4-cookie_session" />
         <module name="demo4-spring_aop" />
         <module name="demo4-tx_proxy" />
         <module name="demo4-url_mapping" />
