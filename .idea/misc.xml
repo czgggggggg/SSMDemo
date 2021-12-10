@@ -14,6 +14,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo3-file_upload" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo4-cookie_session" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo5-restful" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo6-static_resource" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />

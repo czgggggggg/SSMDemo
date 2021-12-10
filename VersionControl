@@ -1012,6 +1012,36 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                其实使用@SessionAttribute注解的效果和使用HttpSession参数调用getAttribute的效果是一样的。
           【@CookieValue从cookue中取值】
                @CookieValue注解的使用同@SessionAttribute，不再做具体描述。
+----【demo6-static_resource】
+          pom.xml（spring-mvc、servlet-api）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          【default servlet（提供一个默认的servlet）】
+                此时，在webapp目录下放入dlrb.jpg
+                测试：
+                    访问：http://localhost:8080/dlrb.jpg  失败
+                解决：
+                    web.xml中增加<servlet-mapping>，<servlet-name>为default，<url-pattern>为*.jpg （或者.css等等）
+                    之前静态资源都交给了DispatcherServlet，通过这种配置，把静态资源交给默认servlet，这样子就不经过DispatcherServlet了。
+          【default servlet handler（还是交给DispatcherServlet，但提供了一个默认的handler）】
+                将前面web.xml中添加的default部分删除，可以直接在application.xml中添加：<mvc:default-servlet-handler/>
+                还是交给DispatcherServlet，但提供了一个默认的handler。
+          【MVC的静态资源映射（推荐）】
+                （一个例子）application.xml中添加：
+                        <mvc:resources mapping="/pic/**" location="/WEB-INF/jpg/"/><!--web根路径 /-->
+                        <mvc:resources mapping="/pic2/**" location="classpath:/pic/"/><!--classpath /-->
+                        <mvc:resources mapping="/pic3/**" location="file:D:/spring/pic/"/><!--文件路径-->
+                mapping 写的是映射路径   ** 指的是这个url路径下或其子url路径
+                location写的是真实路径：
+                    1、webroot web的根路径，如果是maven工程对应的就是webapp路径
+                    2、classpath 类加载路径，如果是maven工程对应的是java或resources路径 → /WEB-INF/classes
+                    3、文件系统 filesystem D://spring
+                映射之后如何访问静态资源？
+                    mapping中的值（pic） + 相对于location的值（girl/dlrb.jpg） = pic/girl/dlrb.jpg
+                测试：
+                    访问：http://localhost:8080/pic/girl/dlrb.jpg  成功    pic（/WEB-INF/jpg/） + girl/dlrb.jpg   → /WEB-INF/jpg/girl/dlrb.jpg
+                    访问：http://localhost:8080/pic2/lzl.jpg       成功    pic2（classpath:/pic/） + lzl.jpg      → classpath:/pic/lzl.jpg
+                    访问：http://localhost:8080/pic3/lzl.jpg       成功    pic3（file:D:/spring/pic/） + lzl.jpg  → file:D:/spring/pic/lzl.jpg
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
