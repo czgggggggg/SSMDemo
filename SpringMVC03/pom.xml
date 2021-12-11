@@ -18,6 +18,7 @@
         <module>demo4-cookie_session</module>
         <module>demo5-restful</module>
         <module>demo6-static_resource</module>
+        <module>demo7-json</module>
     </modules>
 
 

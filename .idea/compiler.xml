@@ -41,6 +41,7 @@
         <module name="demo6-static_resource" />
         <module name="demo6-tx_annotation" />
         <module name="demo6_factory" />
+        <module name="demo7-json" />
         <module name="demo7-lifecycle" />
         <module name="demo7-tx_annotation_javaconfig" />
         <module name="Mybatis01" />

@@ -1042,6 +1042,39 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                     访问：http://localhost:8080/pic/girl/dlrb.jpg  成功    pic（/WEB-INF/jpg/） + girl/dlrb.jpg   → /WEB-INF/jpg/girl/dlrb.jpg
                     访问：http://localhost:8080/pic2/lzl.jpg       成功    pic2（classpath:/pic/） + lzl.jpg      → classpath:/pic/lzl.jpg
                     访问：http://localhost:8080/pic3/lzl.jpg       成功    pic3（file:D:/spring/pic/） + lzl.jpg  → file:D:/spring/pic/lzl.jpg
+----【demo7-json】
+          pom.xml（spring-mvc、servlet-api）（lombok、jackson-databind）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          【jackson-databind】
+              springmvc对json数据支持的依赖
+              Jackson3个 core annotation databind
+          【@RequestBody请求参数封装】
+              前后端分离的项目，前端和后端之间做通信 json 数据作为载体
+              使用@RequestBody之前：
+                  可以用User、Map直接接收请求参数（username、password）  //Map需要加@RequestParam注解
+                  测试：
+                      访问：http://localhost:8080/package/json1?username=czgbyer&password=123456  输出：user = User(username=czgbyer, password=123456)
+                           http://localhost:8080/package/json2?username=czgbyer&password=123456  输出：user = {username=czgbyer, password=123456}
+              使用@RequestBody之前：
+                  可以接收json的请求（具体见【postman构造json的请求】）
+                      //在User、Map类型前面加上@RequestBody注解
+                  测试：
+                      访问：http://localhost:8080/package/json3  输出：user = User(username=czgbyer, password=123456)
+                      访问：http://localhost:8080/package/json4  输出：user = {username=czgbyer, password=123456}
+          【@ResponseBody返回值封装】
+                  可以返回json数据
+                  在对应的handler方法前加上@ResponseBody注解
+                  测试：
+                      访问：http://localhost:8080/package/json5  原本输出的是String类型的"/WEB-INF/view/ok.jsp"，现在返回的是json格式的"/WEB-INF/view/ok.jsp"
+                      访问：http://localhost:8080/package/json6  输出新的json数据
+          【postman构造json的请求】
+              Content-Type、Accept都设置成：application/json
+              在Body -> raw 中输入json格式的数据，如：
+                  {
+                      "username":"czgbyer",
+                      "password":"123456"
+                  }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
