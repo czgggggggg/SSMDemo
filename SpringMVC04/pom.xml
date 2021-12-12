@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo1-interceptor</module>
+        <module>demo2-multi_interceptor</module>
     </modules>
 
 

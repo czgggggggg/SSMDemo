@@ -20,6 +20,7 @@
         <module name="demo2-aspect_annotation" />
         <module name="demo2-converter" />
         <module name="demo2-fetch_param" />
+        <module name="demo2-multi_interceptor" />
         <module name="demo2-propagation_introduction" />
         <module name="demo2-start" />
         <module name="demo2_ioc1" />

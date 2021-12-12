@@ -1113,6 +1113,40 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                  访问：http://localhost:8080/hello1  依次输出： preHandle -> hello1 -> postHandle -> /WEB-INF/view/ok.jsp -> afterCompletion
                                                     并且，最终http://localhost:8080/hello1页面显示的是：false.jsp的内容："嘿嘿嘿，你被postHandle处理了"
                  也就是，通过拦截器的postHanler()方法，改变了ModelAndView的值：/WEB-INF/view/ok.jsp -> /WEB-INF/view/false.jsp
+----【demo2-multi_interceptor】
+          pom.xml（spring-mvc、servlet-api）（lombok、jackson-databind）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          增加3个拦截器（CustomInterceptor1、CustomInterceptor2、CustomInterceptor3）
+          【当三个prehandle的返回值均为true时】
+          测试：
+              访问：http://localhost:8080/hello  依次输出：preHandle1 -> preHandle2 -> preHandle3 ->
+                                                         hello ->
+                                                         postHandle3 -> postHandle2 -> postHandle1 ->
+                                                         afterCompletion3 -> afterCompletion2 -> afterCompletion1
+          【当前两个prehandle的返回值为true，第三个prehandle的返回值为false时】
+          测试：
+              访问：http://localhost:8080/hello  依次输出：preHandle1 -> preHandle2 -> preHandle3 ->
+                                                         afterCompletion2 -> afterCompletion1
+          【总结】
+              interceptor的prehandle方法返回值为false，提供一个规律：
+                  1、prehandle为false则停下
+                  2、如果执行到的interceptor的prehandle为true，则一定可以执行到其afterCompletion
+              现在有三个interceptor分别叫interceptor1、interceptor2、interceptor3，如果其中一个的prehandle方法的返回值为false
+              1、interceptor1的返回值为false，其余两个为true
+                  //只执行到prehandle1
+              2、interceptor2的返回值为false，其余两个为true
+                  //执行prehandle1、prehandle2、afterCompletion1
+              3、interceptor3的返回值为false，其余两个为true
+                  //执行prehandle1、prehandle2、prehandle3、afterCompletion2、afterCompletion1
+          【如果handle方法抛出异常】
+              规律：遇到异常则停、如果prehandle返回值为true，一定可以执行到对应afterCompletion
+              //让HelloController的hello()方法抛出一个异常
+                  //3个拦截器的prehandle()方法均返回true
+              测试：
+                  访问：http://localhost:8080/hello  依次输出：preHandle1 -> preHandle2 -> preHandle3 ->
+                                                             hello ->
+                                                             afterCompletion3 -> afterCompletion2 -> afterCompletion1
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
