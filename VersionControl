@@ -1077,6 +1077,42 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【SpringMVC04】
+----【demo1-interceptor】
+          pom.xml（spring-mvc、servlet-api）（lombok）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          【自定义拦截器】
+              CustomInterceptor implements HandlerInterceptor
+              要实现的方法包括：prehandle、postHandle、afterCompletion
+                  boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+                  void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView)
+                  void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex)
+              CustomInterceptor类上加上@Component注解
+              prehandle()方法返回true
+              prehandle、postHandle、afterCompletion分别在控制台输出对应的方法名
+          【application.xml引入自定义的拦截器】
+              使用标签<mvc:interceptors>
+                  [1]采用引用的方式
+                        <ref bean="customInterceptor">
+                  [2]或者采用直接注册的方式
+                        <bean class="com.bupt.interceptor.CustomInterceptor">
+          【定义HelloController，包含被拦截的方法hello1()、hello2()】
+              测试（使用拦截器拦截）：
+                 访问：http://localhost:8080/hello1  依次输出： preHandle -> hello1 -> postHandle -> afterCompletion
+                 访问：http://localhost:8080/hello2  依次输出： preHandle -> hello2 -> postHandle -> afterCompletion
+              测试（将拦截器的preHandle方法的返回值设置为false）
+                 访问：http://localhost:8080/hello1  输出： preHandle
+                 访问：http://localhost:8080/hello2  输出： preHandle
+              测试（将拦截器的preHandle方法的返回值设置为false，并在返回false前进行重定向）
+                 request.getRequestDispatcher("/WEB-INF/view/false.jsp").forward(request,response);
+                 访问：http://localhost:8080/hello1  输出： preHandle  重定向到/WEB-INF/view/false.jsp
+                 访问：http://localhost:8080/hello2  输出： preHandle  重定向到/WEB-INF/view/false.jsp
+              测试（将拦截器的preHandle方法的返回值设置为true，并在postHandle方法中增加以下代码：）
+                 System.out.println(modelAndView.getViewName());
+                 modelAndView.setViewName("/WEB-INF/view/post.jsp");
+                 访问：http://localhost:8080/hello1  依次输出： preHandle -> hello1 -> postHandle -> /WEB-INF/view/ok.jsp -> afterCompletion
+                                                    并且，最终http://localhost:8080/hello1页面显示的是：false.jsp的内容："嘿嘿嘿，你被postHandle处理了"
+                 也就是，通过拦截器的postHanler()方法，改变了ModelAndView的值：/WEB-INF/view/ok.jsp -> /WEB-INF/view/false.jsp
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

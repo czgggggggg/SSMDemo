@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="demo7-json:war exploded" />
+      <artifact name="demo1-interceptor:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424a57ca-3057-475f-9b31-ba3655c3dd81" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/SpringMVC03/demo7-json/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/java/com/bupt/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/java/com/bupt/controller/JsonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/resources/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/webapp/WEB-INF/view/ok.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/interceptor/CustomInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/resources/application.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/false.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/ok.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/post.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringMVC03/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC03/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC04/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC04/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VersionControl" beforeDir="false" afterPath="$PROJECT_DIR$/VersionControl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -73,6 +75,7 @@
     <ignored path="$PROJECT_DIR$/SpringMVC03/demo5-restful/target/" />
     <ignored path="$PROJECT_DIR$/SpringMVC03/demo6-static_resource/target/" />
     <ignored path="$PROJECT_DIR$/SpringMVC03/demo7-json/target/" />
+    <ignored path="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,57 +128,57 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="0-SNAPSHOT" value="5" />
-          <entry key="VersionControl" value="15" />
-          <entry key="class" value="14" />
+          <entry key="VersionControl" value="16" />
+          <entry key="class" value="15" />
           <entry key="html" value="1" />
           <entry key="iml" value="8" />
-          <entry key="java" value="391" />
+          <entry key="java" value="395" />
           <entry key="jpg" value="3" />
-          <entry key="jsp" value="37" />
+          <entry key="jsp" value="40" />
           <entry key="md" value="2" />
           <entry key="properties" value="8" />
           <entry key="ps1" value="1" />
           <entry key="vue" value="2" />
-          <entry key="xml" value="338" />
+          <entry key="xml" value="346" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="14" />
+          <entry key="CLASS" value="15" />
           <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="8" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="391" />
-          <entry key="JSP" value="37" />
+          <entry key="JAVA" value="395" />
+          <entry key="JSP" value="40" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="PLAIN_TEXT" value="17" />
           <entry key="Properties" value="8" />
           <entry key="UML" value="5" />
           <entry key="Vue.js" value="2" />
-          <entry key="XML" value="338" />
+          <entry key="XML" value="346" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="VersionControl" value="32780" />
+          <entry key="VersionControl" value="33506" />
           <entry key="dummy" value="13" />
           <entry key="ft" value="42" />
           <entry key="html" value="51" />
-          <entry key="java" value="18234" />
-          <entry key="jsp" value="1323" />
+          <entry key="java" value="18601" />
+          <entry key="jsp" value="1374" />
           <entry key="properties" value="85" />
-          <entry key="xml" value="4014" />
+          <entry key="xml" value="4062" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="51" />
-          <entry key="JAVA" value="18234" />
-          <entry key="JSP" value="1323" />
-          <entry key="PLAIN_TEXT" value="32793" />
+          <entry key="JAVA" value="18601" />
+          <entry key="JSP" value="1374" />
+          <entry key="PLAIN_TEXT" value="33519" />
           <entry key="Properties" value="85" />
           <entry key="VTL" value="42" />
-          <entry key="XML" value="4014" />
+          <entry key="XML" value="4062" />
         </counts>
       </usages-collector>
     </session>
@@ -185,20 +188,86 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VersionControl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="1069" column="72" selection-start-line="1069" selection-start-column="72" selection-end-line="1069" selection-end-column="72" />
+            <state relative-caret-position="230">
+              <caret line="1113" column="55" selection-start-line="1113" selection-start-column="55" selection-end-line="1113" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/java/com/bupt/controller/JsonController.java">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/controller/HelloController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="43" column="37" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="37" />
+            <state relative-caret-position="119">
+              <caret line="17" selection-start-line="17" selection-end-line="20" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/resources/application.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/interceptor/CustomInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="26" selection-start-line="26" selection-end-line="27" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/false.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/ok.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/post.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -217,10 +286,10 @@
         <option value="FxmlFile" />
         <option value="Spring官网配置文件03（加上aop&amp;tx）" />
         <option value="Interface" />
-        <option value="20web" />
         <option value="Spring官网配置文件04（加上aop&amp;tx&amp;mvc）" />
-        <option value="Jsp File" />
+        <option value="20web" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -281,14 +350,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SpringMVC02/demo2-fetch_param/src/main/java/com/bupt/controller/ParamController.java" />
-        <option value="$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter/src/main/webapp/WEB-INF/view/ok.jsp" />
-        <option value="$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter/src/main/webapp/WEB-INF/view/login.jsp" />
-        <option value="$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter/src/main/java/com/bupt/controller/CharacterController.java" />
-        <option value="$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringMVC03/demo1-character_encoding_filter/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/SpringMVC03/demo2-converter/src/main/webapp/WEB-INF/view/ok.jsp" />
         <option value="$PROJECT_DIR$/SpringMVC03/demo2-converter/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/SpringMVC03/demo2-converter/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC03/demo2-converter/src/main/java/com/bupt/bean/User.java" />
@@ -331,6 +392,14 @@
         <option value="$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/java/com/bupt/bean/User.java" />
         <option value="$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day07-SpringMVC3-课堂/day07-springmvc3/demo7_json/src/main/java/com/cskaoyan/controller/JsonController.java" />
         <option value="$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/java/com/bupt/controller/JsonController.java" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/wiew/ok.jsp" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/wiew/post.jsp" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/resources/application.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/controller/HelloController.java" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/false.jsp" />
+        <option value="$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/interceptor/CustomInterceptor.java" />
         <option value="$PROJECT_DIR$/VersionControl" />
       </list>
     </option>
@@ -443,127 +512,6 @@
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
               <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jpg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jpg" type="462c0819:PsiDirectoryNode" />
-              <item name="girl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jpg" type="462c0819:PsiDirectoryNode" />
-              <item name="pic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringMVC03" type="462c0819:PsiDirectoryNode" />
-              <item name="demo6-static_resource" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
@@ -687,6 +635,133 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bupt" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="SpringMVC04" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1-interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -699,7 +774,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/IDEAProjects/SSMDemo/Spring01-IOC/demo1_introduction/src/test/java/com/bupt/IntroductionTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1639200715737" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1639277612630" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Spring02-AOP/demo3-dynamic_proxy/src/test/java/com/bupt" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringMVC01/demo1-web/web/WEB-INF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -746,7 +821,7 @@
     <configuration name="Tomcat 8.5.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.54" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="demo7-json:war exploded">
+        <artifact name="demo1-interceptor:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -811,7 +886,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="demo7-json:war exploded" />
+          <artifact name="demo1-interceptor:war exploded" />
         </option>
       </method>
     </configuration>
@@ -855,7 +930,7 @@
       <workItem from="1639021955707" duration="17202000" />
       <workItem from="1639051708146" duration="177000" />
       <workItem from="1639052161988" duration="7007000" />
-      <workItem from="1639126927824" duration="7132000" />
+      <workItem from="1639126927824" duration="12895000" />
     </task>
     <servers />
   </component>
@@ -892,7 +967,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205526000" />
+    <option name="totallyTimeSpent" value="211289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -926,7 +1001,7 @@
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49932975" weight="0.32892805" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32892805" />
-      <window_info active="true" anchor="bottom" x="22" y="296" width="1492" height="232" id="Run" order="11" sideWeight="0.49932975" visible="true" weight="0.29809105" />
+      <window_info active="true" anchor="bottom" x="22" y="296" width="1492" height="232" id="Run" order="11" sideWeight="0.49932975" visible="true" weight="0.29515418" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -974,93 +1049,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo3-file_upload/src/main/resources/param.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo3-file_upload/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo3-file_upload/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="14" column="60" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.3.RELEASE/spring-web-5.2.3.RELEASE.jar!/org/springframework/web/multipart/MultipartFile.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo3-file_upload/src/main/java/com/bupt/controller/FileUploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo3-file_upload/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" selection-start-line="9" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day07-SpringMVC3-课堂/day07-springmvc3/demo4_cookie_session/src/main/java/com/cskaoyan/controller/SessionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day07-SpringMVC3-课堂/day07-springmvc3/demo4_cookie_session/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day07-SpringMVC3-课堂/day07-springmvc3/demo4_cookie_session/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day07-SpringMVC3-课堂/day07-springmvc3/demo4_cookie_session/src/main/webapp/WEB-INF/view/ok.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo4-cookie_session/src/main/webapp/WEB-INF/view/ok.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo4-cookie_session/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringMVC03/demo4-cookie_session/src/main/java/com/bupt/controller/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -1249,24 +1237,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo7-json/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/resources/application.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1293,8 +1267,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/java/com/bupt/controller/JsonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="43" column="37" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="37" />
+        <state relative-caret-position="362">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC03/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo7-json/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="29" selection-start-line="29" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/post.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.3.RELEASE/spring-webmvc-5.2.3.RELEASE.jar!/org/springframework/web/servlet/HandlerInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="12" selection-start-line="12" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC03/demo7-json/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/ok.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day08-SpringMVC4-课堂/day08-springmvc4/demo1_interceptor/src/main/java/com/cskaoyan/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/view/false.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/王道Java资料汇总（课件-笔记-源码）/Spring/day08-SpringMVC4-课堂/day08-springmvc4/demo1_interceptor/src/main/java/com/cskaoyan/interceptor/CustomInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/resources/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" selection-start-line="17" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor/src/main/java/com/bupt/interceptor/CustomInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="26" selection-start-line="26" selection-end-line="27" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1303,8 +1376,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VersionControl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="1069" column="72" selection-start-line="1069" selection-start-column="72" selection-end-line="1069" selection-end-column="72" />
+        <state relative-caret-position="230">
+          <caret line="1113" column="55" selection-start-line="1113" selection-start-column="55" selection-end-line="1113" selection-end-column="55" />
         </state>
       </provider>
     </entry>

@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>SpringMVC04</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>demo1-interceptor</module>
+    </modules>
 
 
 </project>

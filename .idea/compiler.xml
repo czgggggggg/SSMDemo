@@ -12,6 +12,7 @@
         <module name="demo1-character_encoding_filter" />
         <module name="demo1-collection" />
         <module name="demo1-forward_redirect" />
+        <module name="demo1-interceptor" />
         <module name="demo1-jdbc_template" />
         <module name="demo1-web" />
         <module name="demo1_introduction" />
@@ -49,7 +50,6 @@
         <module name="Mybatis03" />
         <module name="Mybatis04" />
         <module name="Mybatis05" />
-        <module name="SpringMVC04" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

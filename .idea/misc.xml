@@ -16,6 +16,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo5-restful" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo6-static_resource" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC03/demo7-json" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
