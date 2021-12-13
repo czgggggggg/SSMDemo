@@ -1118,6 +1118,7 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
           application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
           web.xml（DispatcherServlet）
           增加3个拦截器（CustomInterceptor1、CustomInterceptor2、CustomInterceptor3）
+              //都要在<mvc:interceptors>中注册
           【当三个prehandle的返回值均为true时】
           测试：
               访问：http://localhost:8080/hello  依次输出：preHandle1 -> preHandle2 -> preHandle3 ->
@@ -1147,6 +1148,55 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   访问：http://localhost:8080/hello  依次输出：preHandle1 -> preHandle2 -> preHandle3 ->
                                                              hello ->
                                                              afterCompletion3 -> afterCompletion2 -> afterCompletion1
+----【demo3-part_url】
+          //interceptor对部分请求进行拦截
+          //前面做的是对DispatcherServlet下的全部的请求都拦截
+          pom.xml（spring-mvc、servlet-api）（lombok、jackson-databind）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          【注册1个interceptor】
+              //注册CustomInterceptor1
+                  <mvc:interceptors>
+                      <!--<ref bean="customInterceptor1"/>-->
+                      <!--path里值是什么，则对哪一部分url起作用 → 其实就是筛选url-->
+                      <!--写法类似于mvc:resources里的mapping属性-->
+                      <mvc:interceptor>
+                          <mvc:mapping path="/hello/**"/>
+                          <ref bean="customInterceptor1"/>
+                      </mvc:interceptor>
+                  </mvc:interceptors>
+              HelloController中包含hello()、helloabc()、helloabcdef()、hello2abcdef()、hello2abc()
+                  对应的url分别为："hello"、"hello/abc"、"hello/abc/def"、"hello2/abc/def"、"hello2/abc"
+              测试：
+                  访问：http://localhost:8080/hello            依次输出：preHandle1 -> hello -> postHandle1 -> afterCompletion1
+                  访问：http://localhost:8080/hello/abc        依次输出：preHandle1 -> hello/abc -> postHandle1 -> afterCompletion1
+                  访问：http://localhost:8080/hello/abc/def    依次输出：preHandle1 -> hello/abc/def -> postHandle1 -> afterCompletion1
+                  访问：http://localhost:8080/hello2/abc/def   依次输出：hello2/abc/def
+                  访问：http://localhost:8080/hello2/abc       依次输出：hello2/abc
+          【注册多个interceptor】
+              //注册CustomInterceptor1、CustomInterceptor2、CustomInterceptor3
+                  <mvc:interceptors>【仍然可以配置多个interceptor】
+                      <!--<ref bean="customInterceptor1"/>-->
+                      <mvc:interceptor>
+                          <!--path里值为什么，则对哪一部分url起作用 → 其实就是筛选url-->
+                          <!--写法类似于mvc:resources里的mapping属性-->
+                          <mvc:mapping path="/hello/**"/>【/hello/**对应的url】
+                          <ref bean="customInterceptor1"/>
+                          <!--或者写bean标签-->
+                          <!--<bean class="com.cskaoyan.interceptor.CustomInterceptor1"/>-->
+                      </mvc:interceptor>
+                      <ref bean="customInterceptor2"/>【全部url】
+                      <mvc:interceptor>
+                          <mvc:mapping path="/hello2/**"/>【/hello2/**对应的url】
+                          <ref bean="customInterceptor3"/>
+                      </mvc:interceptor>
+                  </mvc:interceptors>
+              测试：
+                  访问：http://localhost:8080/hello            依次输出：preHandle1 -> preHandle2 -> hello -> postHandle2 -> postHandle1 -> afterCompletion2 -> afterCompletion1
+                  访问：http://localhost:8080/hello/abc        依次输出：preHandle1 -> preHandle2 -> hello/abc -> postHandle2 -> postHandle1 -> afterCompletion2 -> afterCompletion1
+                  访问：http://localhost:8080/hello/abc/def    依次输出：preHandle1 -> preHandle2 -> hello/abc/def -> postHandle2 -> postHandle1 -> afterCompletion2 -> afterCompletion1
+                  访问：http://localhost:8080/hello2/abc/def   依次输出：preHandle2 -> preHandle3 -> hello2/abc/def -> postHandle3 -> postHandle2 -> afterCompletion3 -> afterCompletion2
+                  访问：http://localhost:8080/hello2/abc       依次输出：preHandle2 -> preHandle3 -> hello2/abc -> postHandle3 -> postHandle2 -> afterCompletion3 -> afterCompletion2
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

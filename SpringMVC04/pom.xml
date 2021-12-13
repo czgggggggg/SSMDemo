@@ -14,6 +14,7 @@
     <modules>
         <module>demo1-interceptor</module>
         <module>demo2-multi_interceptor</module>
+        <module>demo3-part_url</module>
     </modules>
 
 
