@@ -19,6 +19,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo1-interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo2-multi_interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo3-part_url" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo4-exception_resolver" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
