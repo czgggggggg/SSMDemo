@@ -16,6 +16,7 @@
         <module>demo2-multi_interceptor</module>
         <module>demo3-part_url</module>
         <module>demo4-exception_resolver</module>
+        <module>demo5-exception_json</module>
     </modules>
 
 

@@ -38,6 +38,7 @@
         <module name="demo4-url_mapping" />
         <module name="demo4_scope" />
         <module name="demo5-advisor" />
+        <module name="demo5-exception_json" />
         <module name="demo5-restful" />
         <module name="demo5-return_value" />
         <module name="demo5-tx_advisor" />

@@ -1246,6 +1246,43 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                                                                                               message:你的用户名属于敏感词
                   访问：http://localhost:8080/login?username=czgbyeraaaaaaaaaaaaaaaa&password=123456  显示：你的用户名超长了！
                                                                                                           message:你输入的用户名长度为：23
+----【demo4-exception_json】
+          pom.xml（spring-mvc、servlet-api）（lombok）（jackson-databind）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          //增加BaseRespVo这个bean，包含：data（data数据）、status（状态值）、errmsg（错误信息）
+          //修改UserServiceImpl的login()方法
+              返回值类型改为BaseRespVo
+              原来没有遇到异常的时候login()方法直接return false，现在返回一个BaseRespVo对象（设置状态值为0，错误信息为“OK”）。
+          //UserController的login()方法的返回值类型改为Object
+              返回UserService最新调用的login()方法返回的BaseRespVo对象。
+          【此时，还未添加ExceptionHandler】
+              测试：
+                  访问：http://localhost:8080/login?username=czgbyer&password=123456
+                           显示：{"data":null,"status":0,"errmsg":"OK"}
+                  访问：http://localhost:8080/login?username=czgbyer_hhh&password=123456
+                           显示：HTTP Status 500 – Internal Server Error
+                                消息 Request processing failed; nested exception is com.bupt.exception.SensitiveException: 你的用户名属于敏感词
+                  访问：http://localhost:8080/login?username=czgbyeraaaaaaaaaaaaaaaa&password=123456
+                           显示：HTTP Status 500 – Internal Server Error
+                                消息 Request processing failed; nested exception is com.bupt.exception.MaxSizeException: 你输入的用户名长度为：23
+          【添加ExceptionHandler】
+              增加CustomExceptionController类
+                  类上加注解@RestControllerAdvice，包含@ControllerAdvice + @ResponseBody
+                  该类包含两个处理异常的方法resolveSensitiveException()、resolveMaxSizeException()，分别对应SensitiveException、MaxSizeException
+                      参数分别为：SensitiveException e、MaxSizeException e
+                  在该类的两个方法上分别加上注解：
+                      @ExceptionHandler(SensitiveException.class)
+                      @ExceptionHandler({MaxSizeException.class, NoSuchAlgorithmException.class})
+                  ExceptionHandler注解中的value为exception的class数组→ 当发生对应的异常时，由该方法处理
+                  在该类的两个方法分别返回各自设置过的BaseRespVo对象
+                  测试：
+                      访问：http://localhost:8080/login?username=czgbyer&password=123456
+                               显示：{"data":null,"status":0,"errmsg":"OK"}
+                      访问：http://localhost:8080/login?username=czgbyer_hhh&password=123456
+                               显示：{"data":null,"status":500,"errmsg":"你的用户名属于敏感词"}
+                      访问：http://localhost:8080/login?username=czgbyeraaaaaaaaaaaaaaaa&password=123456
+                               显示：{"data":null,"status":500,"errmsg":"你输入的用户名长度为：23"}
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
