@@ -43,6 +43,7 @@
         <module name="demo5-return_value" />
         <module name="demo5-tx_advisor" />
         <module name="demo5_regist" />
+        <module name="demo6-i18n" />
         <module name="demo6-static_resource" />
         <module name="demo6-tx_annotation" />
         <module name="demo6_factory" />
