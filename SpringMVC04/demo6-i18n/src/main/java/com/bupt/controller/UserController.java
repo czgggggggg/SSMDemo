@@ -34,14 +34,20 @@ public class UserController {
 //        String message = messageSource.getMessage(key, null, Locale.US);
 
         Object[] params = {param1, param2};
-//        String message = messageSource.getMessage(key, params, locale);
+        String message = messageSource.getMessage(key, params, locale);
 //        String message = messageSource.getMessage(key, params, Locale.US);
-        String message = messageSource.getMessage(key, params, Locale.CHINA);
+//        String message = messageSource.getMessage(key, params, Locale.CHINA);
 
         BaseRespVo baseRespVo = new BaseRespVo();
         baseRespVo.setStatus(200);
         baseRespVo.setErrmsg(message);
 
         return baseRespVo;
+    }
+
+    @RequestMapping("locale")
+    public BaseRespVo locale(Locale locale){
+        System.out.println("locale = " + locale);
+        return new BaseRespVo();
     }
 }

@@ -1332,7 +1332,9 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
               将param1、param2参数放入Object[]数组中：Object[] params = {param1, param2};
               增加一条语句：String message = messageSource.getMessage(key, params, locale);
               测试：
-                  [1]此时Locale为fetchMessage()方法传入的locale  //应该是默认的Locale。【疑问】这个locale的值不知道是怎么获得的？
+                  [1]此时Locale为fetchMessage()方法传入的locale
+                          //应该是默认的Locale。【疑问】这个locale的值不知道是怎么获得的？
+                          //根据【LocaleResolver】，可以在cookie中设置locale，并且经过测试可以影响到此处的locale参数，只是locale的默认值不知道是怎么获取的。
                      访问：http://localhost:8080/fetch/message/hello?param1=czgbyer&param2=niupi
                           显示：{"data":null,"status":200,"errmsg":"你好 czgbyer 柴柴 niupi"}
                   [2]将Locale设置为：Locale.US
@@ -1341,6 +1343,33 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   [3]将Locale设置为：Locale.CHINA
                      访问：http://localhost:8080/fetch/message/hello?param1=czgbyer&param2=niupi
                           显示：{"data":null,"status":200,"errmsg":"你好 czgbyer 柴柴 niupi"}
+          【LocaleResolver】
+              //locale是一个语言就可以了
+              //Cookie或session来进行管理 →在cookie或session中维护一个key → key对应你的locale
+              [1]注册localeResolver
+                  <!--注册localeResolver-->
+                  <!--id也是一个固定值-->
+                  <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+                      <!--cookieName决定locale信息的key-->
+                      <property name="cookieName" value="language"/>
+                      <property name="defaultLocale" value="zh_CN"/>
+                  </bean>
+                  <!--<bean class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>-->
+              [2]UserController类增加一个locale()方法
+                  @RequestMapping("locale")
+                  public BaseRespVo locale(Locale locale){
+                      System.out.println("locale = " + locale);
+                      return new BaseRespVo();
+                  }
+              测试：
+                  [1]访问：http://localhost:8080/locale  控制台输出：locale = zh_CN
+                  [2]在开发者工具中修改cookie
+                       Application -> Cookies -> 添加language、en_US
+                     访问：http://localhost:8080/locale  控制台输出：locale = en_US
+                  [3]此时如果把fetchMessage()方法的Locale设置为传入参数locale，
+                     再访问http://localhost:8080/fetch/message/hello?param1=czgbyer&param2=niupi，
+                        浏览器显示：{"data":null,"status":200,"errmsg":"hello czgbyer czgbyer niupi"}
+                     //可以进行更多类似的测试
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
