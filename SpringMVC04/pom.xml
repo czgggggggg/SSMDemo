@@ -18,6 +18,7 @@
         <module>demo4-exception_resolver</module>
         <module>demo5-exception_json</module>
         <module>demo6-i18n</module>
+        <module>demo7-hibernate_validator</module>
     </modules>
 
 

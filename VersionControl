@@ -1370,6 +1370,107 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                      再访问http://localhost:8080/fetch/message/hello?param1=czgbyer&param2=niupi，
                         浏览器显示：{"data":null,"status":200,"errmsg":"hello czgbyer czgbyer niupi"}
                      //可以进行更多类似的测试
+----【demo7-hibernate_validator】
+          pom.xml（spring-mvc、servlet-api）（lombok）（jackson-databind）（hibernate_validator）
+          application.xml（<context:component-scan/>、<mvc:annotation-driven/>）
+          web.xml（DispatcherServlet）
+          [1]<mvc:annotation-driven>标签加上validator属性：
+              <mvc:annotation-driven validator="validator"/>
+          [2]注册validator组件
+              <!--validator组件-->
+              <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+                  <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+              </bean>
+          [3]定义User类
+              成员变量username上加注解@Size(min = 6)
+              成员变量password上加注解@Size(max = 10)
+              成员变量age上加注解@Min(value = 0)、@Max(value = 200)
+          [4]UserController类
+              类上加@RestController  //返回的是json数据
+              包含login()方法：参数类型User，且加上注解@Valid   //参数校验失败则不会进入handler()方法
+                              返回值类型User
+          [5]测试：
+                 访问：http://localhost:8080/login?username=czg&password=123456&age=25
+                     浏览器显示：HTTP Status 400 – 错误的请求
+                     控制台输出（部分）：Field error in object 'user' on field 'username': default message [个数必须在6和2147483647之间]]
+                 访问：http://localhost:8080/login?username=czgbyer&password=123456111111111111&age=25
+                     浏览器显示：HTTP Status 400 – 错误的请求
+                     控制台输出（部分）：Field error in object 'user' on field 'password': default message [个数必须在0和10之间]]
+                 访问：http://localhost:8080/login?username=czgbyer&password=123456&age=1000
+                     浏览器显示：HTTP Status 400 – 错误的请求
+                     控制台输出（部分）：Field error in object 'user' on field 'age': default message [age],200]; default message [最大不能超过200]]
+                 访问：http://localhost:8080/login?username=czgbyer&password=123456&age=25
+                     浏览器显示：{"username":"czgbyer","password":"123456","age":25}
+                     控制台输出：user = User(username=czgbyer, password=123456, age=25)
+          [6]常见的校验规则（注解写在Model的成员变量上）
+                 约束注解	                        详细信息
+                 @Null	                        被注释的元素必须为 null
+                 @NotNull	                    被注释的元素必须不为 null
+                 @AssertTrue	                被注释的元素必须为 true
+                 @AssertFalse	                被注释的元素必须为 false
+                 @Min(value)	                被注释的元素必须是一个数字，其值必须大于等于指定的最小值
+                 @Max(value)	                被注释的元素必须是一个数字，其值必须小于等于指定的最大值
+                 @DecimalMin(value)	            被注释的元素必须是一个数字，其值必须大于等于指定的最小值
+                 @DecimalMax(value)	            被注释的元素必须是一个数字，其值必须小于等于指定的最大值
+                 @Size(max, min)	            被注释的元素的大小必须在指定的范围内
+                 @Digits (integer, fraction)	被注释的元素必须是一个数字，其值必须在可接受的范围内
+                 @Past	                        被注释的元素必须是一个过去的日期
+                 @Future	                    被注释的元素必须是一个将来的日期
+                 @Pattern(value)           	    被注释的元素必须符合指定的正则表达式
+                 @Email	                        被注释的元素必须是电子邮箱地址
+                 @Length	                    被注释的字符串的大小必须在指定的范围内
+                 @NotEmpty	                    被注释的字符串的必须非空
+                 @Range	                        被注释的元素必须在合适的范围内
+          【在handler方法中做进一步的处理】
+              login()方法增加一个BindingResult参数  //此时，发生参数校验错误可以进入到handler方法
+              增加语句：
+                      if(bindingResult.hasFieldErrors()){  //判断是否有参数校验错误
+                          //拿到错误消息（该消息可以自己在校验注解中配置）
+                          FieldError fieldError = bindingResult.getFieldError();
+                          String defaultMessage = fieldError.getDefaultMessage();
+                          System.out.println(defaultMessage);
+                      }
+              测试：
+                  访问：http://localhost:8080/login?username=czg&password=123456&age=25
+                      浏览器显示：{"username":"czg","password":"123456","age":25}
+                      控制台输出：user = User(username=czg, password=123456, age=25)
+                                个数必须在6和2147483647之间
+              此时用到的message是默认的，也可以配置自己的message
+          【配置自己的message】
+              将成员变量username上的注解@Size增加一个message属性：
+                  @Size(min = 6, message = "min size limit 6")
+              将成员变量password上的注解@Size增加一个message属性：
+                  @Size(max = 10, message = "max size limit 10")
+              测试：
+                  访问：http://localhost:8080/login?username=czg&password=123456&age=25
+                       控制台输出：min size limit 6
+                  访问：http://localhost:8080/login?username=czgbyer&password=123456111111111111&age=25
+                       控制台输出：max size limit 10
+              另外可以增加一个BaseRespVo类，让login()方法返回一个BaseRespVo对象。//根据校验是否成功设置对应的参数（详见代码）
+              【message可以从MessageSource中获取值】
+                  [1]配置文件中注册一个validationMessageSource
+                      <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+                          <property name="basename" value="classpath:message"/>
+                          <property name="defaultEncoding" value="utf-8"/>
+                      </bean>
+                  [2]validator组件引用messageSource
+                      <property name="validationMessageSource" ref="messageSource"/>
+                  [3]增加message配置文件
+                      message_en_US.properties中的内容：
+                          user.username = username min size limit 6
+                          user.password = password max size limit 10
+                      message_zh_CN.properties中的内容：
+                          user.username = 用户名最小长度为6
+                          user.password = 密码最大长度为10
+                  [4]User成员变量username、password上的注解分别修改为：
+                      @Size(min = 6, message = "{user.username}")
+                      @Size(max = 10, message = "{user.password}")
+                      //也就是引入messageSource中的key
+                  [5]测试（注意此时locale默认为CHINA）：
+                        访问：http://localhost:8080/login?username=czg&password=123456&age=25
+                             控制台输出：用户名最小长度为6
+                        访问：http://localhost:8080/login?username=czgbyer&password=123456111111111111&age=25
+                             控制台输出：密码最大长度为10
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

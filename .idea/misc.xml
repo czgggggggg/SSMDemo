@@ -22,6 +22,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo4-exception_resolver" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo5-exception_json" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo6-i18n" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC04/demo7-hibernate_validator" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
