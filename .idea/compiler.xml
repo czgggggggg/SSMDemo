@@ -14,6 +14,7 @@
         <module name="demo1-forward_redirect" />
         <module name="demo1-interceptor" />
         <module name="demo1-jdbc_template" />
+        <module name="demo1-mybatis_introduction" />
         <module name="demo1-web" />
         <module name="demo1_introduction" />
         <module name="demo2-annotation" />
@@ -51,7 +52,6 @@
         <module name="demo7-json" />
         <module name="demo7-lifecycle" />
         <module name="demo7-tx_annotation_javaconfig" />
-        <module name="Mybatis01" />
         <module name="Mybatis02" />
         <module name="Mybatis03" />
         <module name="Mybatis04" />

@@ -1473,6 +1473,101 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                              控制台输出：密码最大长度为10
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis01】
+----【demo1-mybatis_introduction】
+          【介绍】
+              //ORM：Object Relationship Mapping 对象关系映射
+              //持久层框架
+              //ibatis → mybatis
+              //灵活的手写sql语句、动态sql、集中式的sql管理
+              //高级映射：输入和输出映射
+              //输入映射: 执行sql过程中为sql语句提供参数 → 封装sql语句的过程
+              //输出映射：执行完sql之后查询结果的封装 → 查询结果的封装
+              //转义字符：
+                  html xml & 需要使用转义字符
+                  & &amp;
+                  space &nbsp;
+                  ＞ &gt;  //greater than
+                  ＜ &lt;  //less than
+          pom.xml（mybatis、mysql-connector-java、junit、lombok）
+          【映射文件】
+              //集中管理sql
+              //namespace是映射文件的id → 该映射文件的唯一标识 → 去哪个映射文件下找sql语句
+              //insert、delete、update、select标签中的id → 在同一个映射文件下不能重复，在不同的映射文件中可以有相同的id
+              //命名空间+id 是唯一的 → 可以找到唯一对应的sql语句
+              [1]新增模板mapper.xml
+                  名称：mapper、类型：.xml
+                  内容：
+                      <?xml version="1.0" encoding="UTF-8" ?>
+                      <!DOCTYPE mapper
+                              PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+                      <mapper namespace="">
+
+                      </mapper>
+              [2]mapper.xml模板的使用：
+                  UserMapper.xml：namespace值填写为userMapperNamespace
+                  AccountMapper.xml：namespace值填写为accountMapperNamespace
+              [3]mybatis.xml
+                  内容：
+                      <?xml version="1.0" encoding="UTF-8" ?>
+                      <!DOCTYPE configuration
+                              PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                              "http://mybatis.org/dtd/mybatis-3-config.dtd">
+                      <configuration>
+                          <environments default="development">
+                              <environment id="development">
+                                  <transactionManager type="JDBC"/>
+                                  <dataSource type="POOLED">
+                                      <property name="driver" value="com.mysql.jdbc.Driver"/>
+                                      <property name="url" value="jdbc:mysql://localhost:3306/20_db?useUnicode=true&amp;characterEncoding=utf-8"/>
+                                      <property name="username" value="root"/>
+                                      <property name="password" value="123456"/>
+                                  </dataSource>
+                              </environment>
+                          </environments>
+                          <mappers>
+                              <!--resource对应的是classpath 要加载映射文件-->
+                              <!--映射文件 → 集中管理sql语句的配置文件 → 命名通常叫 xxxMapper.xml-->
+                              <mapper resource="com/bupt/UserMapper.xml"/>
+                              <mapper resource="com/bupt/AccountMapper.xml"/>
+                          </mappers>
+                      </configuration>
+          【第1个查询：查询数据记录数】
+              [1]userMapperNamespace中添加sql语句
+                  <select id="selectCount" resultType="int">
+                      select count(*) from user_t
+                  </select>
+              [2]进行单元测试
+                  MybatisTest类的test1()方法：
+                      public void test1() throws IOException {
+                          SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+                          InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");
+                          SqlSessionFactory sqlSessionFactory = builder.build(inputStream);
+                          SqlSession sqlSession = sqlSessionFactory.openSession();//会话 connection
+                          //第一个参数：命名空间+id
+                          //第二个参数：object给sql语句提供参数
+                          int count = sqlSession.selectOne("userMapperNamespace.selectCount");
+                          System.out.println("count = " + count);
+                      }
+              [3]测试：
+                  控制台输出：count = 5   //正确
+          【第2个查询：查询一个User】
+              [1]新增User类：
+                  javabean的成员变量名和关系表中的列名一致
+              [2]userMapperNamespace中添加sql语句
+                  <select id="selectUserById" resultType="com.bupt.bean.User">
+                      select id,username,password,age,gender from user_t where id = #{idz}
+                  </select>
+              [3]MybatisTest类的test1()方法：
+                  public void test2() throws IOException {
+                      //4条会话链接语句合并成1条
+                      SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis.xml")).openSession();
+                      int idz = 1;
+                      User user = sqlSession.selectOne("userMapperNamespace.selectUserById", idz);//注意此处的idz和sql中的idz相同
+                      System.out.println("user = " + user);
+                  }
+              [4]测试：
+                  控制台输出：user = User(id=1, Username=czgbyer, password=123456, age=25, gender=male)   //正确
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
