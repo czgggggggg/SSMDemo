@@ -23,6 +23,7 @@
         <module name="demo2-fetch_param" />
         <module name="demo2-multi_interceptor" />
         <module name="demo2-propagation_introduction" />
+        <module name="demo2-setting" />
         <module name="demo2-start" />
         <module name="demo2_ioc1" />
         <module name="demo3-aspectj_annotation" />

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--<properties resource="db.properties"/>-->
+    <properties resource="db.properties">
+        <property name="db.driver" value="com.mysql.jdbc.Driver"/>
+        <property name="db.jdbcUrl" value="jdbc:mysql://localhost:3306/20_db?useUnicode=true&amp;characterEncoding=utf-8"/>
+    </properties>
+    <!--<settings>
+        <setting name="cacheEnabled" value=""/>
+    </settings>-->
+    <typeAliases>
+        <!--<typeAlias type="com.bupt.bean.User" alias="userz"/>-->
+        <package name="com.bupt.bean"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}"/>
+                <property name="url"
+                          value="${db.jdbcUrl}"/>
+                <property name="username" value="${db.username}"/>
+                <property name="password" value="${db.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--resource对应classpath路径 java resources-->
+        <!--user → UserMapper.xml-->
+        <mapper resource="com/bupt/mapper/UserMapper.xml"/>
+
+        <!--url对应的是映射文件的真实路径D:\WorkSpace\j20_workspace\codes\day09_mybatis1\demo2_setting\src\main\resources\com\mapper\UserMapper.xml-->
+        <!--<mapper url="file:///D:\WorkSpace\j20_workspace\codes\day09_mybatis1\demo2_setting\src\main\resources\com\mapper\UserMapper.xml"/>-->
+        <!--class写mybatis映射文件对应的接口
+        接口和映射文件对应：
+            1、一个接口对应一个映射文件
+            2、接口的全类名和映射文件的命名空间一致 → namespace写成接口的全类名
+            3、接口中的方法名和映射文件中的标签的id一致 → id写成方法的名字
+            namespace+id 可以找到唯一对应的sql 语句 → 通过接口和方法也可以找到唯一对应的sql
+            4、接口和映射文件在同一级目录下，并且同名
+        -->
+        <!--<mapper class="com.mapper.UserMapper"/>-->
+        <!--批量 配置 → name里填包路径 → 接口和映射文件所在的包-->
+        <package name="com.mapper"/>
+    </mappers>
+</configuration>

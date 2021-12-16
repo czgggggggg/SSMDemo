@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userMapperNamespace">
+    <select id="selectUsernameById" resultType="java.lang.String">
+        select username from user_t where id = #{id}
+    </select>
+
+    <!--<select id="selectUserById" resultType="com.bupt.bean.User">-->
+    <select id="selectUserById" resultType="user">
+        select id,username,password,age,gender from user_t where id = #{id}
+    </select>
+</mapper>

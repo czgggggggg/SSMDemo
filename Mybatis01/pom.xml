@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo1-mybatis_introduction</module>
+        <module>demo2-setting</module>
     </modules>
 
 
