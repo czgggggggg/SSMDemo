@@ -30,6 +30,15 @@ public class MybatisTest {
         sqlSession = sqlSessionFactory.openSession();//会话 connection
     }
 
+    /**每一个@Test注解对应的方法 都会最后执行该方法*/
+    @After
+    public void commitAndClose(){
+        if(sqlSession != null){
+            sqlSession.commit();
+            sqlSession.close();
+        }
+    }
+
     /**第1个查询 查询了数据记录数*/
     @Test
     public void test1() throws IOException {
@@ -60,5 +69,21 @@ public class MybatisTest {
         for(User user : users){
             System.out.println(user);
         }
+    }
+
+    @Test
+    public void test4(){
+        User user = new User();
+        user.setUsername("wk");
+        user.setPassword("161616");
+        user.setAge(23);
+        user.setGender("male");
+
+        int insert = sqlSession.insert("userMapperNamespace.insertUser",user);
+        System.out.println("insert = " + insert);
+
+        //增删改操作 涉及到修改数据库的数据 事务
+        sqlSession.commit();
+        sqlSession.close();
     }
 }

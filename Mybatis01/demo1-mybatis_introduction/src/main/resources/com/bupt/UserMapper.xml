@@ -22,4 +22,8 @@
     <select id="selectUsers" resultType="com.bupt.bean.User">
         select id,username,password,age,gender from user_t
     </select>
+
+    <insert id="insertUser">
+        insert into user_t (username,password,age,gender) values (#{username},#{password},#{age},#{gender})
+    </insert>
 </mapper>

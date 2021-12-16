@@ -1603,7 +1603,39 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                       User(id=2, Username=czgggggggg, password=121212, age=25, gender=male)
                       User(id=3, Username=ltf, password=131313, age=24, gender=male)
                       User(id=4, Username=hudeng, password=141414, age=23, gender=male)
-                      User(id=5, Username=lizhao, password=151515, age=23, gender=null)
+                      User(id=5, Username=lizhao, password=151515, age=23, gender=male)
+          【增加update】
+              [1]userMapperNamespace中添加sql语句：
+                  <insert id="insertUser">
+                      insert into user_t (username,password,age,gender) values (#{username},#{password},#{age},#{gender})
+                  </insert>
+              [2]MybatisTest类的test4()方法：
+                  public void test4(){
+                      User user = new User();
+                      user.setUsername("wk");
+                      user.setPassword("161616");
+                      user.setAge(23);
+                      user.setGender("male");
+
+                      int insert = sqlSession.insert("userMapperNamespace.insertUser",user);
+                      System.out.println("insert = " + insert);
+
+                      //增删改操作 涉及到修改数据库的数据 事务
+                      sqlSession.commit();
+                      sqlSession.close();
+                  }
+              [3]测试：
+                  控制台输出：
+                      insert = 1
+                  数据库表中新增数据成功。
+          【使用Junit提供的@After注解，抽取出2条重复的提交语句】
+              [1]MybatisTest类定义一个commitAndClose()方法，方法上加@After注解。 //每一个@Test注解对应的方法 都会最后执行该方法
+                  public void commitAndClose(){
+                      if(sqlSession != null){
+                          sqlSession.commit();
+                          sqlSession.close();
+                      }
+                  }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
