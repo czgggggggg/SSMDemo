@@ -1532,11 +1532,14 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                               <mapper resource="com/bupt/AccountMapper.xml"/>
                           </mappers>
                       </configuration>
-          【第1个查询：查询数据记录数】
+          【查询1：查询数据记录数】
               [1]userMapperNamespace中添加sql语句
                   <select id="selectCount" resultType="int">
                       select count(*) from user_t
                   </select>
+                  //sql语句对应操作的标签 crud insert delete update select 在标签中可以直接写sql语句
+                  //sql语句对应的id 在同一个映射文件下不能重复，在不同的映射文件中可以有相同的id
+                  //如果做的是查询，需要写一个叫resultType的属性（不可或缺） 查询结果给你封装成一个什么类型的数据
               [2]进行单元测试
                   MybatisTest类的test1()方法：
                       public void test1() throws IOException {
@@ -1551,14 +1554,17 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                       }
               [3]测试：
                   控制台输出：count = 5   //正确
-          【第2个查询：查询一个User】
+          【查询2：查询一个User】
               [1]新增User类：
                   javabean的成员变量名和关系表中的列名一致
-              [2]userMapperNamespace中添加sql语句
+              [2]userMapperNamespace中添加sql语句：
                   <select id="selectUserById" resultType="com.bupt.bean.User">
                       select id,username,password,age,gender from user_t where id = #{idz}
                   </select>
-              [3]MybatisTest类的test1()方法：
+                  //查询一个javabean对象 select → resultType必不可少
+                  //resultType这里写javabean的全类名
+                  //jdbc写占位符 使用的是？ mybatis这里使用占位符 #{} 入门案例1仅仅提供了一个基本类型的参数 → #{}里任意写
+              [3]MybatisTest类的test2()方法：
                   public void test2() throws IOException {
                       //4条会话链接语句合并成1条
                       SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis.xml")).openSession();
@@ -1568,6 +1574,36 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   }
               [4]测试：
                   控制台输出：user = User(id=1, Username=czgbyer, password=123456, age=25, gender=male)   //正确
+          【使用Junit提供的@Before注解，抽取出4条重复的语句】
+              [1]MybatisTest类定义一个全局变量SqlSession
+              [2]MybatisTest类定义一个init()方法，方法上加@Before注解。 //每一个@Test注解对应的方法都会先执行该方法
+                  将以下4条语句封装到init()方法中：
+                      SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+                      InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");
+                      SqlSessionFactory sqlSessionFactory = builder.build(inputStream);
+                      sqlSession = sqlSessionFactory.openSession();//会话 connection
+                  之后查询直接使用sqlSession。
+          【查询3：查询user的list数据】
+              [1]userMapperNamespace中添加sql语句：
+                  <select id="selectUsers" resultType="com.bupt.bean.User">
+                      select id,username,password,age,gender from user_t
+                  </select>
+                  //不管你的结果是单条还是多条数据，resultType都写单条数据所对应的类型
+                  //底层封装的时候 都是先查询一个list出来
+              [2]MybatisTest类的test3()方法：
+                  public void test3(){
+                      List<User> users = sqlSession.selectList("userMapperNamespace.selectUsers");
+                      for(User user : users){
+                          System.out.println(user);
+                      }
+                  }
+              [3]测试：
+                  控制台输出：
+                      User(id=1, Username=czgbyer, password=123456, age=25, gender=male)
+                      User(id=2, Username=czgggggggg, password=121212, age=25, gender=male)
+                      User(id=3, Username=ltf, password=131313, age=24, gender=male)
+                      User(id=4, Username=hudeng, password=141414, age=23, gender=male)
+                      User(id=5, Username=lizhao, password=151515, age=23, gender=null)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

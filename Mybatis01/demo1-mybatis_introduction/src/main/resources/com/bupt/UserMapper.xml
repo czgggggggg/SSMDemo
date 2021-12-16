@@ -3,11 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userMapperNamespace">
+    <!--sql语句对应操作的标签 crud insert delete update select 在标签中可以直接写sql语句-->
+    <!--sql语句对应的id 在同一个映射文件下不能重复，在不同的映射文件中可以有相同的id-->
+    <!--如果做的是查询，需要写一个叫resultType的属性（不可或缺） 查询结果给你封装成一个什么类型的数据-->
     <select id="selectCount" resultType="int">
         select count(*) from user_t
     </select>
 
+    <!--查询一个javabean对象 select → resultType必不可少-->
+    <!--resultType这里写javabean的全类名-->
+    <!--jdbc写占位符 使用的是？ mybatis这里使用占位符 #{} 入门案例1仅仅提供了一个基本类型的参数 → #{}里任意写-->
     <select id="selectUserById" resultType="com.bupt.bean.User">
         select id,username,password,age,gender from user_t where id = #{idz}
+    </select>
+
+    <!--不管你的结果是单条还是多条数据，resultType都写单条数据所对应的类型
+    底层封装的时候 都是先查询一个list出来-->
+    <select id="selectUsers" resultType="com.bupt.bean.User">
+        select id,username,password,age,gender from user_t
     </select>
 </mapper>

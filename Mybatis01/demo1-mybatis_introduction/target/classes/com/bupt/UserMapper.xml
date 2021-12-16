@@ -10,4 +10,8 @@
     <select id="selectUserById" resultType="com.bupt.bean.User">
         select id,username,password,age,gender from user_t where id = #{idz}
     </select>
+
+    <select id="selectUsers" resultType="com.bupt.bean.User">
+        select id,username,password,age,gender from user_t
+    </select>
 </mapper>
