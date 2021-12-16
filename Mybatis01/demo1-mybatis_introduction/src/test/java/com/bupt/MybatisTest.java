@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -71,19 +72,49 @@ public class MybatisTest {
         }
     }
 
+    /**增加update*/
     @Test
     public void test4(){
-        User user = new User();
-        user.setUsername("wk");
-        user.setPassword("161616");
-        user.setAge(23);
-        user.setGender("male");
+        //JavaBean形式
+//        User user = new User();
+//        user.setUsername("wk");
+//        user.setPassword("161616");
+//        user.setAge(23);
+//        user.setGender("male");
+//        int insert = sqlSession.insert("userMapperNamespace.insertUser",user);
 
-        int insert = sqlSession.insert("userMapperNamespace.insertUser",user);
+        //HashMap形式
+        HashMap<String, Object> userMap = new HashMap<String, Object>();
+        userMap.put("username","wk");
+        userMap.put("password","161616");
+        userMap.put("age",23);
+        userMap.put("gender","male");
+        int insert = sqlSession.insert("userMapperNamespace.insertUser", userMap);
+
         System.out.println("insert = " + insert);
 
         //增删改操作 涉及到修改数据库的数据 事务
-        sqlSession.commit();
-        sqlSession.close();
+//        sqlSession.commit();
+//        sqlSession.close();
+    }
+
+    /**修改update*/
+    @Test
+    public void test5(){
+        User user = new User();
+        user.setAge(20);
+        user.setId(8);
+        int update = sqlSession.update("userMapperNamespace.updateUser", user);
+        System.out.println("update = " + update);
+    }
+
+    /**删除delete*/
+    @Test
+    public void test6(){
+//        User user = new User();
+//        user.setId(8);
+//        int delete = sqlSession.delete("userMapperNamespace.deleteUser", user);
+        int delete = sqlSession.delete("userMapperNamespace.deleteUser", 8);
+        System.out.println("delete = " + delete);
     }
 }

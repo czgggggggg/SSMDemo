@@ -1609,15 +1609,27 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                   <insert id="insertUser">
                       insert into user_t (username,password,age,gender) values (#{username},#{password},#{age},#{gender})
                   </insert>
+                  //新增一条user数据 结果是一个int类型 不需要写resultType
+                  //传入的参数 如果是javabean，那么#{}中写javabean的成员变量名（get方法）
+                  //传入的参数 如果是map ，那么 #{} 中写map对象中的key
               [2]MybatisTest类的test4()方法：
                   public void test4(){
+                      //JavaBean形式
                       User user = new User();
                       user.setUsername("wk");
                       user.setPassword("161616");
                       user.setAge(23);
                       user.setGender("male");
 
+                      //HashMap形式
+                      //HashMap<String, Object> userMap = new HashMap<>();
+                      //userMap.put("username","zhangshuai");
+                      //userMap.put("password","shuai");
+                      //userMap.put("age",25);
+                      //userMap.put("gender", "male");
+
                       int insert = sqlSession.insert("userMapperNamespace.insertUser",user);
+                      //int insert = sqlSession.insert("userMapperNamespace.insertUser", userMap);
                       System.out.println("insert = " + insert);
 
                       //增删改操作 涉及到修改数据库的数据 事务
@@ -1636,6 +1648,53 @@ Processon思维导图链接地址：https://www.processon.com/mindmap/61643651e4
                           sqlSession.close();
                       }
                   }
+          【修改update】
+              [1]userMapperNamespace中添加sql语句：
+                  <update id="updateUser">
+                      update user_t set age = #{age} where id = #{id}
+                  </update>
+              [2]MybatisTest类的test5()方法：
+                  public void test5(){
+                      User user = new User();
+                      user.setAge(20);
+                      user.setId(8);
+                      int update = sqlSession.update("userMapperNamespace.updateUser", user);
+                      System.out.println("update = " + update);
+                  }
+              [3]测试：
+                  控制台输出：update = 1
+                  数据库表中修改数据成功。
+          【删除delete】
+              [1]userMapperNamespace中添加sql语句：
+                  <delete id="deleteUser">
+                      delete from user_t where id = #{id}
+                  </delete>
+              [2]MybatisTest类的test6()方法：
+                  public void test6(){
+                      //JavaBean形式（使用这种方式的时候sql语句的#{id}中的id必须和JavaBean的成员变量名对应）
+                      //User user = new User();
+                      //user.setId(8);
+                      //int delete = sqlSession.delete("userMapperNamespace.deleteUser", user);
+
+                      //指定id（使用这种方式的时候sql语句的#{id}中的id可以任意写，比如idz）
+                      int delete = sqlSession.delete("userMapperNamespace.deleteUser", 8);
+                      System.out.println("delete = " + delete);
+                  }
+              [3]测试：
+                  控制台输出：delete = 1
+                  数据库表中数据删除成功。
+          【小结】
+              调用的方法selectOne、selectList、insert、update、delete
+              两个参数：
+                  1、命名空间+id
+                  2、为sql语句提供参数；
+                      a)参数类型为基本类型或java.lang下的#{}中任意写
+                      b)参数类型为javabean或map对象，#{}中写javabean的成员变量名或map的key
+              对应的标签select、insert、update、delete
+                  1、id 在该映射文件下不可重复（唯一的）
+                  2、select有resultType，并且不可或缺
+                  3、insert、update、delete返回值为int，不需要resultType
+              sqlSession手动（自动）提交&关闭
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 【Mybatis02】
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------

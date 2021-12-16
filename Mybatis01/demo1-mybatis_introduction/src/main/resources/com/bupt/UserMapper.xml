@@ -23,7 +23,21 @@
         select id,username,password,age,gender from user_t
     </select>
 
+    <!--新增一条user数据 结果是一个int类型 不需要写resultType-->
+    <!--传入的参数 如果是javabean，那么#{}中写javabean的成员变量名（get方法）
+        传入的参数 如果是map ，那么 #{} 中写map对象中的key
+    -->
     <insert id="insertUser">
         insert into user_t (username,password,age,gender) values (#{username},#{password},#{age},#{gender})
     </insert>
+
+    <!--修改user的数据-->
+    <update id="updateUser">
+        update user_t set age = #{age} where id = #{id}
+    </update>
+
+    <!--删除user的数据-->
+    <delete id="deleteUser">
+        delete from user_t where id = #{id}
+    </delete>
 </mapper>
